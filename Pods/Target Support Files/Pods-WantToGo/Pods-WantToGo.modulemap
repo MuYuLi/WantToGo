@@ -1,0 +1,6 @@
+framework module Pods_WantToGo {
+  umbrella header "Pods-WantToGo-umbrella.h"
+
+  export *
+  module * { export * }
+}

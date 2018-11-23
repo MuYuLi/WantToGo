@@ -1,0 +1,6 @@
+framework module MYLCommonUI {
+  umbrella header "MYLCommonUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

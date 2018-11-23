@@ -14,6 +14,15 @@
 		279438F521A650A20066E7F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279438F321A650A20066E7F5 /* LaunchScreen.storyboard */; };
 		2794390021A650A20066E7F5 /* WantToGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279438FF21A650A20066E7F5 /* WantToGoTests.swift */; };
 		2794390B21A650A20066E7F5 /* WantToGoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794390A21A650A20066E7F5 /* WantToGoUITests.swift */; };
+		2794391D21A657AA0066E7F5 /* WGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794391C21A657AA0066E7F5 /* WGViewController.swift */; };
+		2794391F21A657BA0066E7F5 /* WGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794391E21A657BA0066E7F5 /* WGView.swift */; };
+		2794392121A657D80066E7F5 /* MYLCardPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392021A657D80066E7F5 /* MYLCardPageView.swift */; };
+		2794392321A690350066E7F5 /* MYLCardCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392221A690350066E7F5 /* MYLCardCollectionFlowLayout.swift */; };
+		2794392621A7D2EA0066E7F5 /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392521A7D2EA0066E7F5 /* NSString+Extension.swift */; };
+		2794392921A802070066E7F5 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392821A802070066E7F5 /* NetworkAPI.swift */; };
+		2794392B21A802170066E7F5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392A21A802170066E7F5 /* NetworkManager.swift */; };
+		2794392D21A802620066E7F5 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392C21A802620066E7F5 /* NetworkConfig.swift */; };
+		EE919EE4C2188EF944E89122 /* Pods_WantToGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantToGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		279438E721A6509E0066E7F5 /* WantToGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantToGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		279438EA21A6509E0066E7F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		279438EC21A6509E0066E7F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +57,16 @@
 		2794390621A650A20066E7F5 /* WantToGoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WantToGoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2794390A21A650A20066E7F5 /* WantToGoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantToGoUITests.swift; sourceTree = "<group>"; };
 		2794390C21A650A20066E7F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2794391C21A657AA0066E7F5 /* WGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGViewController.swift; sourceTree = "<group>"; };
+		2794391E21A657BA0066E7F5 /* WGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGView.swift; sourceTree = "<group>"; };
+		2794392021A657D80066E7F5 /* MYLCardPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYLCardPageView.swift; sourceTree = "<group>"; };
+		2794392221A690350066E7F5 /* MYLCardCollectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYLCardCollectionFlowLayout.swift; sourceTree = "<group>"; };
+		2794392521A7D2EA0066E7F5 /* NSString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Extension.swift"; sourceTree = "<group>"; };
+		2794392821A802070066E7F5 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		2794392A21A802170066E7F5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2794392C21A802620066E7F5 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		45F6EC93358A37B138BE3108 /* Pods-WantToGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.release.xcconfig"; sourceTree = "<group>"; };
+		9DE31279E3B54345098F3A81 /* Pods-WantToGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE919EE4C2188EF944E89122 /* Pods_WantToGo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +102,8 @@
 				279438FE21A650A20066E7F5 /* WantToGoTests */,
 				2794390921A650A20066E7F5 /* WantToGoUITests */,
 				279438E821A6509E0066E7F5 /* Products */,
+				65C17CC0A77246EC042E3731 /* Pods */,
+				990DC87642DD1788D6EFCADA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +120,8 @@
 		279438E921A6509E0066E7F5 /* WantToGo */ = {
 			isa = PBXGroup;
 			children = (
+				2794391921A6535B0066E7F5 /* Library */,
+				2794391821A6533E0066E7F5 /* Source */,
 				279438EA21A6509E0066E7F5 /* AppDelegate.swift */,
 				279438EC21A6509E0066E7F5 /* ViewController.swift */,
 				279438EE21A6509E0066E7F5 /* Main.storyboard */,
@@ -125,6 +150,77 @@
 			path = WantToGoUITests;
 			sourceTree = "<group>";
 		};
+		2794391821A6533E0066E7F5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		2794391921A6535B0066E7F5 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2794392721A800D60066E7F5 /* Network */,
+				2794392421A7D2AE0066E7F5 /* Catagory */,
+				2794391B21A657790066E7F5 /* Base */,
+				2794391A21A657530066E7F5 /* MYLCardPageView */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		2794391A21A657530066E7F5 /* MYLCardPageView */ = {
+			isa = PBXGroup;
+			children = (
+				2794392021A657D80066E7F5 /* MYLCardPageView.swift */,
+				2794392221A690350066E7F5 /* MYLCardCollectionFlowLayout.swift */,
+			);
+			path = MYLCardPageView;
+			sourceTree = "<group>";
+		};
+		2794391B21A657790066E7F5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2794391C21A657AA0066E7F5 /* WGViewController.swift */,
+				2794391E21A657BA0066E7F5 /* WGView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2794392421A7D2AE0066E7F5 /* Catagory */ = {
+			isa = PBXGroup;
+			children = (
+				2794392521A7D2EA0066E7F5 /* NSString+Extension.swift */,
+			);
+			path = Catagory;
+			sourceTree = "<group>";
+		};
+		2794392721A800D60066E7F5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2794392821A802070066E7F5 /* NetworkAPI.swift */,
+				2794392A21A802170066E7F5 /* NetworkManager.swift */,
+				2794392C21A802620066E7F5 /* NetworkConfig.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		65C17CC0A77246EC042E3731 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DE31279E3B54345098F3A81 /* Pods-WantToGo.debug.xcconfig */,
+				45F6EC93358A37B138BE3108 /* Pods-WantToGo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		990DC87642DD1788D6EFCADA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2794390F21A650A20066E7F5 /* Build configuration list for PBXNativeTarget "WantToGo" */;
 			buildPhases = (
+				EF334DA79F937C77FB8DDC89 /* [CP] Check Pods Manifest.lock */,
 				279438E321A6509E0066E7F5 /* Sources */,
 				279438E421A6509E0066E7F5 /* Frameworks */,
 				279438E521A6509E0066E7F5 /* Resources */,
+				BBADC055D4235FC3E12C69B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,13 +349,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BBADC055D4235FC3E12C69B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MYLCommonUI/MYLCommonUI.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MYLCommonUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF334DA79F937C77FB8DDC89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WantToGo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		279438E321A6509E0066E7F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2794392B21A802170066E7F5 /* NetworkManager.swift in Sources */,
+				2794391F21A657BA0066E7F5 /* WGView.swift in Sources */,
 				279438ED21A6509E0066E7F5 /* ViewController.swift in Sources */,
+				2794392621A7D2EA0066E7F5 /* NSString+Extension.swift in Sources */,
+				2794391D21A657AA0066E7F5 /* WGViewController.swift in Sources */,
+				2794392121A657D80066E7F5 /* MYLCardPageView.swift in Sources */,
+				2794392D21A802620066E7F5 /* NetworkConfig.swift in Sources */,
+				2794392321A690350066E7F5 /* MYLCardCollectionFlowLayout.swift in Sources */,
 				279438EB21A6509E0066E7F5 /* AppDelegate.swift in Sources */,
+				2794392921A802070066E7F5 /* NetworkAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +595,7 @@
 		};
 		2794391021A650A20066E7F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DE31279E3B54345098F3A81 /* Pods-WantToGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +614,7 @@
 		};
 		2794391121A650A20066E7F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45F6EC93358A37B138BE3108 /* Pods-WantToGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
