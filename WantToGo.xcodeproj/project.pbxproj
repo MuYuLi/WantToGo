@@ -22,6 +22,10 @@
 		2794392921A802070066E7F5 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392821A802070066E7F5 /* NetworkAPI.swift */; };
 		2794392B21A802170066E7F5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392A21A802170066E7F5 /* NetworkManager.swift */; };
 		2794392D21A802620066E7F5 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392C21A802620066E7F5 /* NetworkConfig.swift */; };
+		2794393021A931FF0066E7F5 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794392F21A931FF0066E7F5 /* Logic.swift */; };
+		2794393321A940AB0066E7F5 /* MYLProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794393221A940AB0066E7F5 /* MYLProgressHUD.swift */; };
+		2794393721A9476E0066E7F5 /* HomeTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794393621A9476E0066E7F5 /* HomeTopicModel.swift */; };
+		2794393921A958E60066E7F5 /* WGModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794393821A958E50066E7F5 /* WGModel.swift */; };
 		EE919EE4C2188EF944E89122 /* Pods_WantToGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +69,11 @@
 		2794392821A802070066E7F5 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		2794392A21A802170066E7F5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2794392C21A802620066E7F5 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		2794392E21A930C50066E7F5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2794392F21A931FF0066E7F5 /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
+		2794393221A940AB0066E7F5 /* MYLProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYLProgressHUD.swift; sourceTree = "<group>"; };
+		2794393621A9476E0066E7F5 /* HomeTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopicModel.swift; sourceTree = "<group>"; };
+		2794393821A958E50066E7F5 /* WGModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGModel.swift; sourceTree = "<group>"; };
 		45F6EC93358A37B138BE3108 /* Pods-WantToGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.release.xcconfig"; sourceTree = "<group>"; };
 		9DE31279E3B54345098F3A81 /* Pods-WantToGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +129,8 @@
 		279438E921A6509E0066E7F5 /* WantToGo */ = {
 			isa = PBXGroup;
 			children = (
+				2794392E21A930C50066E7F5 /* PrefixHeader.pch */,
+				2794392F21A931FF0066E7F5 /* Logic.swift */,
 				2794391921A6535B0066E7F5 /* Library */,
 				2794391821A6533E0066E7F5 /* Source */,
 				279438EA21A6509E0066E7F5 /* AppDelegate.swift */,
@@ -153,6 +164,7 @@
 		2794391821A6533E0066E7F5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2794393421A9474B0066E7F5 /* Home */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -160,6 +172,7 @@
 		2794391921A6535B0066E7F5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				2794393121A9407D0066E7F5 /* HUD */,
 				2794392721A800D60066E7F5 /* Network */,
 				2794392421A7D2AE0066E7F5 /* Catagory */,
 				2794391B21A657790066E7F5 /* Base */,
@@ -182,6 +195,7 @@
 			children = (
 				2794391C21A657AA0066E7F5 /* WGViewController.swift */,
 				2794391E21A657BA0066E7F5 /* WGView.swift */,
+				2794393821A958E50066E7F5 /* WGModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -202,6 +216,30 @@
 				2794392C21A802620066E7F5 /* NetworkConfig.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		2794393121A9407D0066E7F5 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				2794393221A940AB0066E7F5 /* MYLProgressHUD.swift */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		2794393421A9474B0066E7F5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2794393521A9475E0066E7F5 /* Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2794393521A9475E0066E7F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2794393621A9476E0066E7F5 /* HomeTopicModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		65C17CC0A77246EC042E3731 /* Pods */ = {
@@ -360,10 +398,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MYLCommonUI/MYLCommonUI.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
@@ -372,10 +410,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MYLCommonUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
@@ -414,8 +452,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2794392B21A802170066E7F5 /* NetworkManager.swift in Sources */,
+				2794393921A958E60066E7F5 /* WGModel.swift in Sources */,
 				2794391F21A657BA0066E7F5 /* WGView.swift in Sources */,
 				279438ED21A6509E0066E7F5 /* ViewController.swift in Sources */,
+				2794393721A9476E0066E7F5 /* HomeTopicModel.swift in Sources */,
+				2794393321A940AB0066E7F5 /* MYLProgressHUD.swift in Sources */,
+				2794393021A931FF0066E7F5 /* Logic.swift in Sources */,
 				2794392621A7D2EA0066E7F5 /* NSString+Extension.swift in Sources */,
 				2794391D21A657AA0066E7F5 /* WGViewController.swift in Sources */,
 				2794392121A657D80066E7F5 /* MYLCardPageView.swift in Sources */,
@@ -598,9 +640,11 @@
 			baseConfigurationReference = 9DE31279E3B54345098F3A81 /* Pods-WantToGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L47A7D74ZA;
 				INFOPLIST_FILE = WantToGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,7 +652,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MYL.WantToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -617,9 +661,11 @@
 			baseConfigurationReference = 45F6EC93358A37B138BE3108 /* Pods-WantToGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L47A7D74ZA;
 				INFOPLIST_FILE = WantToGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -627,7 +673,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MYL.WantToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

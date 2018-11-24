@@ -9,7 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var cardPageView : MYLCardPageView?
+    var dataArray : NSArray? {
+        didSet{
+            let imgArray = NSMutableArray()
+            for homeTopicItem in dataArray as! [HomeTopicItem] {
+                imgArray.add(homeTopicItem.imageMin!)
+            }
+            self.cardPageView?.imageNameArray = imgArray
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,40 +29,24 @@ class ViewController: UIViewController {
     }
     func initMYLCardPageView() -> Void{
         
-        let cardPageView = MYLCardPageView.init(frame: self.view.bounds)
-        self.view.addSubview(cardPageView)
-        
-        cardPageView.collectionViewRect = self.view.frame
-            
-//            CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: 100)
-        cardPageView.backgroundColor = UIColor.black
-        cardPageView.imageNameArray = ["1","2","3","4","5"]
-    
+        self.cardPageView = MYLCardPageView.init(frame: self.view.bounds)
+        self.view.addSubview(self.cardPageView!)
+        self.cardPageView?.collectionViewRect = self.view.frame
+        self.cardPageView?.backgroundColor = UIColor.black
     }
 
-    
     func loadData() -> Void {
-        
-        Provider.request(.testApi){ (result) in
+  
+        let dict = NSMutableDictionary()
+        let date = NSDate.timeIntervalSinceReferenceDate
+        dict.setValue("专题", forKey: "key")
+        dict.setValue(date, forKey: "t")
+        NetworkRequest(.homePageTopicApi(Dict: dict as! [String : Any])){ (respose) -> (Void) in
             
-            switch result{
-            case let .success(response):
-                print(response)
-            case let .failure(error):
-                print(error)
-                
+            if let homeTopicModel = HomeTopicModel.deserialize(from: respose){
+                self.dataArray = homeTopicModel.data! as NSArray
             }
         }
-        
-        NetworkRequest(.testApi){ (respose) -> (Void) in
-            
-            
-            
-            
-            
-        }
-        
-        
     }
 }
 

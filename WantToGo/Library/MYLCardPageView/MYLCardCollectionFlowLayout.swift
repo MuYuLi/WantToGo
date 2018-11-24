@@ -18,7 +18,6 @@ class MYLCardCollectionCell : UICollectionViewCell {
         self.imageV = UIImageView.init(frame: self.bounds)
         self.imageV?.layer.cornerRadius = 10
         self.imageV?.layer.masksToBounds = true
-        self.imageV?.backgroundColor = UIColor.red
         self.contentView.addSubview(self.imageV!)
     }
     
@@ -34,7 +33,7 @@ class MYLCardCollectionFlowLayout: UICollectionViewFlowLayout {
     let SCREEN_HEIGHT : CGFloat = UIScreen.main.bounds.size.height
     let ITEM_ZOOM : CGFloat = 0.05
     let THE_ACTIVE_DISTANCE : CGFloat = 230
-    let LEFT_OFFSET : CGFloat = 60
+    let LEFT_OFFSET : CGFloat = 30
 
     override init() {
         
@@ -57,7 +56,6 @@ class MYLCardCollectionFlowLayout: UICollectionViewFlowLayout {
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
-    
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         

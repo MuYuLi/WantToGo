@@ -77,7 +77,7 @@ class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCell", for: indexPath) as! MYLCardCollectionCell
         let imageUrl = self.imageNameArray.object(at: indexPath.row) as! String
         
-        if imageUrl.isEmpty && NSString.ValidaString.URL(imageUrl).isRight {
+        if !imageUrl.isEmpty {
             cell.imageV?.kf.setImage(with: URL(string: imageUrl))
         }else{
             cell.imageV?.image = UIImage.init(imageLiteralResourceName: self.imageNameArray.object(at: indexPath.row) as! String)
