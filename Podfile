@@ -11,7 +11,7 @@ target 'WantToGo' do
     pod 'Kingfisher', '~> 4.10.1'
     pod 'HandyJSON'
     pod 'MYLCommonUI'
-
+    pod 'CYLTabBarController', '~> 1.17.21'
     
    inhibit_all_warnings!
 

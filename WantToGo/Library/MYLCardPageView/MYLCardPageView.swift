@@ -9,8 +9,12 @@
 import UIKit
 import Kingfisher
 
+typealias SelectItemBlock = (_ index: NSInteger) -> Void
+
 class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
 
+    var selectItemBlock : SelectItemBlock?
+    
     let cellWidth : CGFloat = 300
     let itemSpacing : CGFloat = 10
     let ButtonHeight : CGFloat = 80
@@ -23,21 +27,12 @@ class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSourc
             self.collectionView.reloadData()
         }
     }
-
-    public var collectionViewRect = CGRect(x: 0, y: 0, width: 0, height: 0){
-        didSet{
-            self.collectionView.frame = collectionViewRect
-        }
-    }
-    public var pageControlRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     
     var collectionView : UICollectionView!
-    let pageControl = UIPageControl()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.initSubViews()
-    
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,18 +44,16 @@ class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSourc
         //自定义UICollectionViewFlowLayout
         let layout = MYLCardCollectionFlowLayout.init()
         
-        self.collectionView = UICollectionView.init(frame: self.bounds, collectionViewLayout: layout)
+        self.collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height), collectionViewLayout: layout)
         self.collectionView.backgroundColor = UIColor.white
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.register(MYLCardCollectionCell.self, forCellWithReuseIdentifier:"defaultCell")
         self.collectionView.contentSize = CGSize.init(width: self.frame.size.width, height: self.frame.size.height)
         self.collectionView.clipsToBounds = true
+        self.collectionView.showsHorizontalScrollIndicator = false
         self.addSubview(self.collectionView)
-        
-        self.addSubview(self.pageControl)
     }
-    
     
     //MARK: ---------    UICollectionDelegate && UICollectionDataSource
     
@@ -71,6 +64,7 @@ class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.itemNumber
     }
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -85,8 +79,10 @@ class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSourc
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-    }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if self.selectItemBlock != nil {
+            self.selectItemBlock!(indexPath.row)
+        }
+    }
 }

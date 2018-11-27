@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		279438EB21A6509E0066E7F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279438EA21A6509E0066E7F5 /* AppDelegate.swift */; };
-		279438ED21A6509E0066E7F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279438EC21A6509E0066E7F5 /* ViewController.swift */; };
 		279438F021A6509E0066E7F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279438EE21A6509E0066E7F5 /* Main.storyboard */; };
 		279438F221A650A20066E7F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279438F121A650A20066E7F5 /* Assets.xcassets */; };
 		279438F521A650A20066E7F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279438F321A650A20066E7F5 /* LaunchScreen.storyboard */; };
@@ -26,6 +25,16 @@
 		2794393321A940AB0066E7F5 /* MYLProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794393221A940AB0066E7F5 /* MYLProgressHUD.swift */; };
 		2794393721A9476E0066E7F5 /* HomeTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794393621A9476E0066E7F5 /* HomeTopicModel.swift */; };
 		2794393921A958E60066E7F5 /* WGModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794393821A958E50066E7F5 /* WGModel.swift */; };
+		2794393B21AA91C50066E7F5 /* WGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794393A21AA91C50066E7F5 /* WGWebViewController.swift */; };
+		2794393D21AAA4660066E7F5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794393C21AAA4660066E7F5 /* MainTabBarController.swift */; };
+		2794393F21AAA74D0066E7F5 /* WGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794393E21AAA74D0066E7F5 /* WGNavigationController.swift */; };
+		2794394121AAAA8A0066E7F5 /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794394021AAAA8A0066E7F5 /* UIColor+Extention.swift */; };
+		2797B07E21AB85CB00D47643 /* WGThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B07D21AB85CB00D47643 /* WGThemeViewController.swift */; };
+		2797B08121ACEB6D00D47643 /* WGConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08021ACEB6C00D47643 /* WGConstants.swift */; };
+		2797B08721AD1D2600D47643 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08621AD1D2600D47643 /* MineViewController.swift */; };
+		2797B08921AD1DC800D47643 /* GuangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08821AD1DC800D47643 /* GuangViewController.swift */; };
+		2797B08B21AD1DD200D47643 /* TaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08A21AD1DD200D47643 /* TaViewController.swift */; };
+		2797B08D21AD1DDE00D47643 /* DesignerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08C21AD1DDE00D47643 /* DesignerViewController.swift */; };
 		EE919EE4C2188EF944E89122 /* Pods_WantToGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +59,6 @@
 		180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantToGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		279438E721A6509E0066E7F5 /* WantToGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantToGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		279438EA21A6509E0066E7F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		279438EC21A6509E0066E7F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		279438EF21A6509E0066E7F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		279438F121A650A20066E7F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		279438F421A650A20066E7F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +82,16 @@
 		2794393221A940AB0066E7F5 /* MYLProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYLProgressHUD.swift; sourceTree = "<group>"; };
 		2794393621A9476E0066E7F5 /* HomeTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopicModel.swift; sourceTree = "<group>"; };
 		2794393821A958E50066E7F5 /* WGModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGModel.swift; sourceTree = "<group>"; };
+		2794393A21AA91C50066E7F5 /* WGWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGWebViewController.swift; sourceTree = "<group>"; };
+		2794393C21AAA4660066E7F5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		2794393E21AAA74D0066E7F5 /* WGNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGNavigationController.swift; sourceTree = "<group>"; };
+		2794394021AAAA8A0066E7F5 /* UIColor+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
+		2797B07D21AB85CB00D47643 /* WGThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGThemeViewController.swift; sourceTree = "<group>"; };
+		2797B08021ACEB6C00D47643 /* WGConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGConstants.swift; sourceTree = "<group>"; };
+		2797B08621AD1D2600D47643 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		2797B08821AD1DC800D47643 /* GuangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangViewController.swift; sourceTree = "<group>"; };
+		2797B08A21AD1DD200D47643 /* TaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaViewController.swift; sourceTree = "<group>"; };
+		2797B08C21AD1DDE00D47643 /* DesignerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignerViewController.swift; sourceTree = "<group>"; };
 		45F6EC93358A37B138BE3108 /* Pods-WantToGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.release.xcconfig"; sourceTree = "<group>"; };
 		9DE31279E3B54345098F3A81 /* Pods-WantToGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,10 +149,10 @@
 			children = (
 				2794392E21A930C50066E7F5 /* PrefixHeader.pch */,
 				2794392F21A931FF0066E7F5 /* Logic.swift */,
+				2797B08021ACEB6C00D47643 /* WGConstants.swift */,
 				2794391921A6535B0066E7F5 /* Library */,
 				2794391821A6533E0066E7F5 /* Source */,
 				279438EA21A6509E0066E7F5 /* AppDelegate.swift */,
-				279438EC21A6509E0066E7F5 /* ViewController.swift */,
 				279438EE21A6509E0066E7F5 /* Main.storyboard */,
 				279438F121A650A20066E7F5 /* Assets.xcassets */,
 				279438F321A650A20066E7F5 /* LaunchScreen.storyboard */,
@@ -164,7 +182,11 @@
 		2794391821A6533E0066E7F5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2794393421A9474B0066E7F5 /* Home */,
+				2797B08521AD1BA300D47643 /* Mine */,
+				2797B08421AD1B9800D47643 /* Guang */,
+				2797B08321AD1B8D00D47643 /* Ta */,
+				2797B08221AD1B7D00D47643 /* Designer */,
+				2794393421A9474B0066E7F5 /* Theme */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -196,6 +218,9 @@
 				2794391C21A657AA0066E7F5 /* WGViewController.swift */,
 				2794391E21A657BA0066E7F5 /* WGView.swift */,
 				2794393821A958E50066E7F5 /* WGModel.swift */,
+				2794393A21AA91C50066E7F5 /* WGWebViewController.swift */,
+				2794393C21AAA4660066E7F5 /* MainTabBarController.swift */,
+				2794393E21AAA74D0066E7F5 /* WGNavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -204,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				2794392521A7D2EA0066E7F5 /* NSString+Extension.swift */,
+				2794394021AAAA8A0066E7F5 /* UIColor+Extention.swift */,
 			);
 			path = Catagory;
 			sourceTree = "<group>";
@@ -226,12 +252,13 @@
 			path = HUD;
 			sourceTree = "<group>";
 		};
-		2794393421A9474B0066E7F5 /* Home */ = {
+		2794393421A9474B0066E7F5 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				2797B07F21AB85DE00D47643 /* Controller */,
 				2794393521A9475E0066E7F5 /* Model */,
 			);
-			path = Home;
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		2794393521A9475E0066E7F5 /* Model */ = {
@@ -240,6 +267,78 @@
 				2794393621A9476E0066E7F5 /* HomeTopicModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2797B07F21AB85DE00D47643 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2797B07D21AB85CB00D47643 /* WGThemeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2797B08221AD1B7D00D47643 /* Designer */ = {
+			isa = PBXGroup;
+			children = (
+				2797B09121AD1E6700D47643 /* Controller */,
+			);
+			path = Designer;
+			sourceTree = "<group>";
+		};
+		2797B08321AD1B8D00D47643 /* Ta */ = {
+			isa = PBXGroup;
+			children = (
+				2797B09021AD1E5900D47643 /* Controller */,
+			);
+			path = Ta;
+			sourceTree = "<group>";
+		};
+		2797B08421AD1B9800D47643 /* Guang */ = {
+			isa = PBXGroup;
+			children = (
+				2797B08F21AD1E4D00D47643 /* Controller */,
+			);
+			path = Guang;
+			sourceTree = "<group>";
+		};
+		2797B08521AD1BA300D47643 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				2797B08E21AD1E2D00D47643 /* Controller */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		2797B08E21AD1E2D00D47643 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2797B08621AD1D2600D47643 /* MineViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2797B08F21AD1E4D00D47643 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2797B08821AD1DC800D47643 /* GuangViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2797B09021AD1E5900D47643 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2797B08A21AD1DD200D47643 /* TaViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2797B09121AD1E6700D47643 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2797B08C21AD1DDE00D47643 /* DesignerViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		65C17CC0A77246EC042E3731 /* Pods */ = {
@@ -398,6 +497,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MYLCommonUI/MYLCommonUI.framework",
@@ -410,6 +510,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MYLCommonUI.framework",
@@ -452,19 +553,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				2794392B21A802170066E7F5 /* NetworkManager.swift in Sources */,
+				2797B08121ACEB6D00D47643 /* WGConstants.swift in Sources */,
 				2794393921A958E60066E7F5 /* WGModel.swift in Sources */,
 				2794391F21A657BA0066E7F5 /* WGView.swift in Sources */,
-				279438ED21A6509E0066E7F5 /* ViewController.swift in Sources */,
 				2794393721A9476E0066E7F5 /* HomeTopicModel.swift in Sources */,
 				2794393321A940AB0066E7F5 /* MYLProgressHUD.swift in Sources */,
 				2794393021A931FF0066E7F5 /* Logic.swift in Sources */,
 				2794392621A7D2EA0066E7F5 /* NSString+Extension.swift in Sources */,
 				2794391D21A657AA0066E7F5 /* WGViewController.swift in Sources */,
+				2797B08D21AD1DDE00D47643 /* DesignerViewController.swift in Sources */,
 				2794392121A657D80066E7F5 /* MYLCardPageView.swift in Sources */,
+				2794393D21AAA4660066E7F5 /* MainTabBarController.swift in Sources */,
+				2794393B21AA91C50066E7F5 /* WGWebViewController.swift in Sources */,
+				2794394121AAAA8A0066E7F5 /* UIColor+Extention.swift in Sources */,
+				2794393F21AAA74D0066E7F5 /* WGNavigationController.swift in Sources */,
 				2794392D21A802620066E7F5 /* NetworkConfig.swift in Sources */,
+				2797B07E21AB85CB00D47643 /* WGThemeViewController.swift in Sources */,
 				2794392321A690350066E7F5 /* MYLCardCollectionFlowLayout.swift in Sources */,
+				2797B08921AD1DC800D47643 /* GuangViewController.swift in Sources */,
 				279438EB21A6509E0066E7F5 /* AppDelegate.swift in Sources */,
 				2794392921A802070066E7F5 /* NetworkAPI.swift in Sources */,
+				2797B08721AD1D2600D47643 /* MineViewController.swift in Sources */,
+				2797B08B21AD1DD200D47643 /* TaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

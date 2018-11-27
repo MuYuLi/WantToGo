@@ -11,7 +11,7 @@ import Moya
 
 enum NetworkAPI {
  
-    case homePageTopicApi(Dict:[String:Any])//首页topic
+    case themePageTopicApi(Dict:[String:Any])//首页topic
     case testApiDict(Dict:[String:Any])//把参数包装成字典传入
     case testApi
     case testAPi(para1:String,para2:String)//普遍的写法
@@ -38,7 +38,7 @@ extension NetworkAPI : TargetType {
     
     var task: Task {
         switch self {
-        case let .homePageTopicApi(dict):
+        case let .themePageTopicApi(dict):
             return .requestParameters(parameters: dict, encoding: URLEncoding.default)
         case .testApi:
             return .requestPlain
@@ -58,7 +58,7 @@ extension NetworkAPI : TargetType {
     
     var path: String {
         switch self {
-        case .homePageTopicApi:
+        case .themePageTopicApi:
             return "ios/topic"
         case .testApi: return "4/news/latest"
         case .testAPi(let para1, _):

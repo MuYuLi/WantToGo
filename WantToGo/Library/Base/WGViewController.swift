@@ -12,19 +12,23 @@ class WGViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        self.view.backgroundColor = UIColor.white
+        
+//        let menuBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//        menuBtn.titleLabel?.text = "fanhui"
+//        menuBtn.backgroundColor = UIColor.red
+//        menuBtn.addTarget(self, action: #selector(self.action(_ :)), for: UIControl.Event.touchUpInside)
+//
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuBtn)
+//
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//
+//    @objc func action(_ button: UIButton) -> Void {
+//        self.navigationController?.popViewController(animated: true)
+//
+//    }
 
 }

@@ -18,14 +18,7 @@ class Logic {
         return network?.isReachable ?? true //无返回就默认网络已连接
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
+
     
 }
 
