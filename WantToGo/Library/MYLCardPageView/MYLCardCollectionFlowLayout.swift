@@ -12,14 +12,22 @@ import UIKit
 class MYLCardCollectionCell : UICollectionViewCell {
     
     var imageV : UIImageView?
-    
+    var shadowImageV : UIImageView?
+    var backgroundImageV: UIImageView?
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.imageV = UIImageView.init(frame: self.bounds)
-        self.imageV?.layer.cornerRadius = 10
-        self.imageV?.layer.masksToBounds = true
-        self.imageV?.backgroundColor = UIColor.red
+  
+        self.backgroundImageV = UIImageView.init(frame:self.bounds)
+        self.contentView.addSubview(self.backgroundImageV!)
+        self.backgroundImageV?.image = UIImage.init(named: "theme_magazine")
+        
+        self.imageV = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height - 20))
         self.contentView.addSubview(self.imageV!)
+      
+        self.shadowImageV = UIImageView.init(frame:CGRect.init(x: 0, y: 0, width: 20, height: self.imageV!.frame.size.height))
+        self.contentView.addSubview(self.shadowImageV!)
+        self.shadowImageV?.image = UIImage.init(named: "theme_shadow")
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,7 +42,7 @@ class MYLCardCollectionFlowLayout: UICollectionViewFlowLayout {
     let SCREEN_HEIGHT : CGFloat = UIScreen.main.bounds.size.height
     let ITEM_ZOOM : CGFloat = 0.05
     let THE_ACTIVE_DISTANCE : CGFloat = 230
-    let LEFT_OFFSET : CGFloat = 60
+    let LEFT_OFFSET : CGFloat = 30
 
     override init() {
         
@@ -48,7 +56,7 @@ class MYLCardCollectionFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
         self.sectionInset = UIEdgeInsets.init(top: 0, left: LEFT_OFFSET, bottom: 0, right: LEFT_OFFSET)
-        self.itemSize = CGSize.init(width: SCREEN_WIDTH - LEFT_OFFSET*2, height: (SCREEN_WIDTH - LEFT_OFFSET*2)/0.618)
+        self.itemSize = CGSize.init(width: kMainScreenWidth - LEFT_OFFSET*2, height: (SCREEN_WIDTH - LEFT_OFFSET*2)/0.618)
         self.scrollDirection = UICollectionView.ScrollDirection(rawValue: 1)!
         self.minimumLineSpacing = 15.0
         self.minimumInteritemSpacing = 10
@@ -57,7 +65,6 @@ class MYLCardCollectionFlowLayout: UICollectionViewFlowLayout {
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
-    
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         

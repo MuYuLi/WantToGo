@@ -7,13 +7,11 @@ target 'WantToGo' do
 
     pod 'Alamofire'
     pod 'Moya', '~> 11.0'
-    pod 'ObjectMapper'
     pod 'SnapKit', '~> 4.0.0'
     pod 'Kingfisher', '~> 4.10.1'
-
+    pod 'HandyJSON'
     pod 'MYLCommonUI'
-
-
+    pod 'CYLTabBarController', '~> 1.17.21'
     
    inhibit_all_warnings!
 

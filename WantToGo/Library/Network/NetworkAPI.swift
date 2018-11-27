@@ -10,6 +10,8 @@ import Foundation
 import Moya
 
 enum NetworkAPI {
+ 
+    case themePageTopicApi(Dict:[String:Any])//首页topic
     case testApiDict(Dict:[String:Any])//把参数包装成字典传入
     case testApi
     case testAPi(para1:String,para2:String)//普遍的写法
@@ -17,7 +19,7 @@ enum NetworkAPI {
 
 extension NetworkAPI : TargetType {
     var baseURL: URL {
-        return URL.init(string: "dddd")!
+        return URL.init(string: "http://api.xiangqu.com/")!
     }
     
     var method: Moya.Method {
@@ -36,6 +38,8 @@ extension NetworkAPI : TargetType {
     
     var task: Task {
         switch self {
+        case let .themePageTopicApi(dict):
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
         case .testApi:
             return .requestPlain
         case let .testAPi(para1, _):
@@ -54,14 +58,13 @@ extension NetworkAPI : TargetType {
     
     var path: String {
         switch self {
+        case .themePageTopicApi:
+            return "ios/topic"
         case .testApi: return "4/news/latest"
         case .testAPi(let para1, _):
             return "\(para1)/news/latest"
         case .testApiDict:
             return "4/news/latest"
-            
-            // default:
-            // return "4/news/latest"
         }
     }
 }
