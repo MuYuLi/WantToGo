@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TaViewController: WGViewController {
+class WGTaViewController: WGViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -31,10 +31,17 @@
 		2794394121AAAA8A0066E7F5 /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794394021AAAA8A0066E7F5 /* UIColor+Extention.swift */; };
 		2797B07E21AB85CB00D47643 /* WGThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B07D21AB85CB00D47643 /* WGThemeViewController.swift */; };
 		2797B08121ACEB6D00D47643 /* WGConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08021ACEB6C00D47643 /* WGConstants.swift */; };
-		2797B08721AD1D2600D47643 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08621AD1D2600D47643 /* MineViewController.swift */; };
-		2797B08921AD1DC800D47643 /* GuangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08821AD1DC800D47643 /* GuangViewController.swift */; };
-		2797B08B21AD1DD200D47643 /* TaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08A21AD1DD200D47643 /* TaViewController.swift */; };
-		2797B08D21AD1DDE00D47643 /* DesignerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08C21AD1DDE00D47643 /* DesignerViewController.swift */; };
+		2797B08721AD1D2600D47643 /* WGMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08621AD1D2600D47643 /* WGMineViewController.swift */; };
+		2797B08921AD1DC800D47643 /* WGGuangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08821AD1DC800D47643 /* WGGuangViewController.swift */; };
+		2797B08B21AD1DD200D47643 /* WGTaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08A21AD1DD200D47643 /* WGTaViewController.swift */; };
+		2797B08D21AD1DDE00D47643 /* WGDesignerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08C21AD1DDE00D47643 /* WGDesignerViewController.swift */; };
+		2797B09321AD331500D47643 /* WGThemeSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09221AD331500D47643 /* WGThemeSelectController.swift */; };
+		2797B09821AD4AE100D47643 /* WGViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09721AD4AE100D47643 /* WGViewModel.swift */; };
+		2797B09C21AD4CA700D47643 /* WGGuangCatrgoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09B21AD4CA700D47643 /* WGGuangCatrgoryModel.swift */; };
+		2797B09E21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09D21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift */; };
+		2797B0A021AD534F00D47643 /* UIView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09F21AD534F00D47643 /* UIView+Create.swift */; };
+		2797B0A221AE2F2A00D47643 /* WGGuangShoppingBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0A121AE2F2900D47643 /* WGGuangShoppingBannerCell.swift */; };
+		2797B0A421AE461300D47643 /* WGGuangShopingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0A321AE461300D47643 /* WGGuangShopingModel.swift */; };
 		EE919EE4C2188EF944E89122 /* Pods_WantToGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,10 +95,17 @@
 		2794394021AAAA8A0066E7F5 /* UIColor+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
 		2797B07D21AB85CB00D47643 /* WGThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGThemeViewController.swift; sourceTree = "<group>"; };
 		2797B08021ACEB6C00D47643 /* WGConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGConstants.swift; sourceTree = "<group>"; };
-		2797B08621AD1D2600D47643 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
-		2797B08821AD1DC800D47643 /* GuangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangViewController.swift; sourceTree = "<group>"; };
-		2797B08A21AD1DD200D47643 /* TaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaViewController.swift; sourceTree = "<group>"; };
-		2797B08C21AD1DDE00D47643 /* DesignerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignerViewController.swift; sourceTree = "<group>"; };
+		2797B08621AD1D2600D47643 /* WGMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGMineViewController.swift; sourceTree = "<group>"; };
+		2797B08821AD1DC800D47643 /* WGGuangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangViewController.swift; sourceTree = "<group>"; };
+		2797B08A21AD1DD200D47643 /* WGTaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaViewController.swift; sourceTree = "<group>"; };
+		2797B08C21AD1DDE00D47643 /* WGDesignerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesignerViewController.swift; sourceTree = "<group>"; };
+		2797B09221AD331500D47643 /* WGThemeSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGThemeSelectController.swift; sourceTree = "<group>"; };
+		2797B09721AD4AE100D47643 /* WGViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGViewModel.swift; sourceTree = "<group>"; };
+		2797B09B21AD4CA700D47643 /* WGGuangCatrgoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangCatrgoryModel.swift; sourceTree = "<group>"; };
+		2797B09D21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangCatrgoryHeaderView.swift; sourceTree = "<group>"; };
+		2797B09F21AD534F00D47643 /* UIView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Create.swift"; sourceTree = "<group>"; };
+		2797B0A121AE2F2900D47643 /* WGGuangShoppingBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangShoppingBannerCell.swift; sourceTree = "<group>"; };
+		2797B0A321AE461300D47643 /* WGGuangShopingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangShopingModel.swift; sourceTree = "<group>"; };
 		45F6EC93358A37B138BE3108 /* Pods-WantToGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.release.xcconfig"; sourceTree = "<group>"; };
 		9DE31279E3B54345098F3A81 /* Pods-WantToGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +232,7 @@
 				2794391C21A657AA0066E7F5 /* WGViewController.swift */,
 				2794391E21A657BA0066E7F5 /* WGView.swift */,
 				2794393821A958E50066E7F5 /* WGModel.swift */,
+				2797B09721AD4AE100D47643 /* WGViewModel.swift */,
 				2794393A21AA91C50066E7F5 /* WGWebViewController.swift */,
 				2794393C21AAA4660066E7F5 /* MainTabBarController.swift */,
 				2794393E21AAA74D0066E7F5 /* WGNavigationController.swift */,
@@ -230,6 +245,7 @@
 			children = (
 				2794392521A7D2EA0066E7F5 /* NSString+Extension.swift */,
 				2794394021AAAA8A0066E7F5 /* UIColor+Extention.swift */,
+				2797B09F21AD534F00D47643 /* UIView+Create.swift */,
 			);
 			path = Catagory;
 			sourceTree = "<group>";
@@ -273,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				2797B07D21AB85CB00D47643 /* WGThemeViewController.swift */,
+				2797B09221AD331500D47643 /* WGThemeSelectController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -296,6 +313,9 @@
 		2797B08421AD1B9800D47643 /* Guang */ = {
 			isa = PBXGroup;
 			children = (
+				2797B09621AD49BA00D47643 /* Model */,
+				2797B09521AD499800D47643 /* View */,
+				2797B09421AD499000D47643 /* ViewModel */,
 				2797B08F21AD1E4D00D47643 /* Controller */,
 			);
 			path = Guang;
@@ -312,7 +332,7 @@
 		2797B08E21AD1E2D00D47643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2797B08621AD1D2600D47643 /* MineViewController.swift */,
+				2797B08621AD1D2600D47643 /* WGMineViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,7 +340,7 @@
 		2797B08F21AD1E4D00D47643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2797B08821AD1DC800D47643 /* GuangViewController.swift */,
+				2797B08821AD1DC800D47643 /* WGGuangViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -328,7 +348,7 @@
 		2797B09021AD1E5900D47643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2797B08A21AD1DD200D47643 /* TaViewController.swift */,
+				2797B08A21AD1DD200D47643 /* WGTaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -336,9 +356,34 @@
 		2797B09121AD1E6700D47643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2797B08C21AD1DDE00D47643 /* DesignerViewController.swift */,
+				2797B08C21AD1DDE00D47643 /* WGDesignerViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2797B09421AD499000D47643 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2797B09521AD499800D47643 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2797B09D21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift */,
+				2797B0A121AE2F2900D47643 /* WGGuangShoppingBannerCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2797B09621AD49BA00D47643 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2797B09B21AD4CA700D47643 /* WGGuangCatrgoryModel.swift */,
+				2797B0A321AE461300D47643 /* WGGuangShopingModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		65C17CC0A77246EC042E3731 /* Pods */ = {
@@ -554,6 +599,7 @@
 			files = (
 				2794392B21A802170066E7F5 /* NetworkManager.swift in Sources */,
 				2797B08121ACEB6D00D47643 /* WGConstants.swift in Sources */,
+				2797B0A021AD534F00D47643 /* UIView+Create.swift in Sources */,
 				2794393921A958E60066E7F5 /* WGModel.swift in Sources */,
 				2794391F21A657BA0066E7F5 /* WGView.swift in Sources */,
 				2794393721A9476E0066E7F5 /* HomeTopicModel.swift in Sources */,
@@ -561,20 +607,26 @@
 				2794393021A931FF0066E7F5 /* Logic.swift in Sources */,
 				2794392621A7D2EA0066E7F5 /* NSString+Extension.swift in Sources */,
 				2794391D21A657AA0066E7F5 /* WGViewController.swift in Sources */,
-				2797B08D21AD1DDE00D47643 /* DesignerViewController.swift in Sources */,
+				2797B08D21AD1DDE00D47643 /* WGDesignerViewController.swift in Sources */,
+				2797B0A221AE2F2A00D47643 /* WGGuangShoppingBannerCell.swift in Sources */,
 				2794392121A657D80066E7F5 /* MYLCardPageView.swift in Sources */,
 				2794393D21AAA4660066E7F5 /* MainTabBarController.swift in Sources */,
 				2794393B21AA91C50066E7F5 /* WGWebViewController.swift in Sources */,
+				2797B09321AD331500D47643 /* WGThemeSelectController.swift in Sources */,
+				2797B09821AD4AE100D47643 /* WGViewModel.swift in Sources */,
+				2797B0A421AE461300D47643 /* WGGuangShopingModel.swift in Sources */,
 				2794394121AAAA8A0066E7F5 /* UIColor+Extention.swift in Sources */,
 				2794393F21AAA74D0066E7F5 /* WGNavigationController.swift in Sources */,
+				2797B09C21AD4CA700D47643 /* WGGuangCatrgoryModel.swift in Sources */,
 				2794392D21A802620066E7F5 /* NetworkConfig.swift in Sources */,
 				2797B07E21AB85CB00D47643 /* WGThemeViewController.swift in Sources */,
 				2794392321A690350066E7F5 /* MYLCardCollectionFlowLayout.swift in Sources */,
-				2797B08921AD1DC800D47643 /* GuangViewController.swift in Sources */,
+				2797B09E21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift in Sources */,
+				2797B08921AD1DC800D47643 /* WGGuangViewController.swift in Sources */,
 				279438EB21A6509E0066E7F5 /* AppDelegate.swift in Sources */,
 				2794392921A802070066E7F5 /* NetworkAPI.swift in Sources */,
-				2797B08721AD1D2600D47643 /* MineViewController.swift in Sources */,
-				2797B08B21AD1DD200D47643 /* TaViewController.swift in Sources */,
+				2797B08721AD1D2600D47643 /* WGMineViewController.swift in Sources */,
+				2797B08B21AD1DD200D47643 /* WGTaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

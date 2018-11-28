@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DesignerViewController: WGViewController {
+class WGDesignerViewController: WGViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

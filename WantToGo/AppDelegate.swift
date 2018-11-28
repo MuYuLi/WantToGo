@@ -61,10 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func viewControllers() -> [UIViewController] {
         
         let theme = WGNavigationController(rootViewController: WGThemeViewController())
-        let desiner = WGNavigationController(rootViewController: DesignerViewController())
-        let ta = WGNavigationController(rootViewController: TaViewController())
-        let guang = WGNavigationController(rootViewController: GuangViewController())
-        let mine = WGNavigationController(rootViewController: MineViewController())
+        let desiner = WGNavigationController(rootViewController: WGDesignerViewController())
+        let ta = WGNavigationController(rootViewController: WGTaViewController())
+        let guang = WGNavigationController(rootViewController: WGGuangViewController())
+        let mine = WGNavigationController(rootViewController: WGMineViewController())
         
         let viewControllers = [theme, desiner, ta, guang, mine]
         return viewControllers

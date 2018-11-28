@@ -1,5 +1,5 @@
 //
-//  GuangViewController.swift
+//  MineViewController.swift
 //  WantToGo
 //
 //  Created by Muyuli on 2018/11/27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuangViewController: WGViewController {
+class WGMineViewController: WGViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -69,7 +69,7 @@ class WGThemeViewController: WGViewController {
         
         let dict = NSMutableDictionary()
         let date = NSDate.timeIntervalSinceReferenceDate
-        dict.setValue("专题", forKey: "key")
+        dict.setValue("topic", forKey: "key")
         dict.setValue(date, forKey: "t")
         NetworkRequest(.themePageTopicApi(Dict: dict as! [String : Any])){ (respose) -> (Void) in
             
@@ -82,12 +82,15 @@ class WGThemeViewController: WGViewController {
         if index < (self.dataArray?.count)! {
             
             let homeTopicItem = self.dataArray?.object(at: index) as! HomeTopicItem
-            if homeTopicItem.url != nil {
+            if homeTopicItem.url != nil && homeTopicItem.type == 1 {
                 
                 let webVC = WGWebViewController()
                 webVC.urlString = homeTopicItem.url
                 self.navigationController?.pushViewController(webVC, animated: true)
                 
+            }else{
+                
+               
             }
         }
     }
