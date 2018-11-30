@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //tabbar背景色
         UITabBar.appearance().backgroundColor = UIColor.white
         //tabbar字体颜色
-        UITabBar.appearance().tintColor = UIColor(r: 214, g: 164, b: 49)
+        UITabBar.appearance().tintColor = KMainColor
         
         return true
     }

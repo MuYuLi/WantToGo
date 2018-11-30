@@ -42,6 +42,12 @@
 		2797B0A021AD534F00D47643 /* UIView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09F21AD534F00D47643 /* UIView+Create.swift */; };
 		2797B0A221AE2F2A00D47643 /* WGGuangShoppingBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0A121AE2F2900D47643 /* WGGuangShoppingBannerCell.swift */; };
 		2797B0A421AE461300D47643 /* WGGuangShopingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0A321AE461300D47643 /* WGGuangShopingModel.swift */; };
+		2797B0A821AF843400D47643 /* WGDesignerRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0A721AF843300D47643 /* WGDesignerRecommendModel.swift */; };
+		2797B0AA21AF844900D47643 /* WGDesignerTagsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0A921AF844900D47643 /* WGDesignerTagsModel.swift */; };
+		2797B0AC21AF8FD900D47643 /* WGTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0AB21AF8FD900D47643 /* WGTableViewController.swift */; };
+		2797B0AE21AF952900D47643 /* WGDesignerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0AD21AF952800D47643 /* WGDesignerHeaderView.swift */; };
+		2797B0B021AFD58C00D47643 /* WGDesingerSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0AF21AFD58C00D47643 /* WGDesingerSectionHeaderView.swift */; };
+		2797B0B221AFE5C600D47643 /* WGDesingerTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0B121AFE5C600D47643 /* WGDesingerTagCell.swift */; };
 		EE919EE4C2188EF944E89122 /* Pods_WantToGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +112,12 @@
 		2797B09F21AD534F00D47643 /* UIView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Create.swift"; sourceTree = "<group>"; };
 		2797B0A121AE2F2900D47643 /* WGGuangShoppingBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangShoppingBannerCell.swift; sourceTree = "<group>"; };
 		2797B0A321AE461300D47643 /* WGGuangShopingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangShopingModel.swift; sourceTree = "<group>"; };
+		2797B0A721AF843300D47643 /* WGDesignerRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesignerRecommendModel.swift; sourceTree = "<group>"; };
+		2797B0A921AF844900D47643 /* WGDesignerTagsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesignerTagsModel.swift; sourceTree = "<group>"; };
+		2797B0AB21AF8FD900D47643 /* WGTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTableViewController.swift; sourceTree = "<group>"; };
+		2797B0AD21AF952800D47643 /* WGDesignerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesignerHeaderView.swift; sourceTree = "<group>"; };
+		2797B0AF21AFD58C00D47643 /* WGDesingerSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesingerSectionHeaderView.swift; sourceTree = "<group>"; };
+		2797B0B121AFE5C600D47643 /* WGDesingerTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesingerTagCell.swift; sourceTree = "<group>"; };
 		45F6EC93358A37B138BE3108 /* Pods-WantToGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.release.xcconfig"; sourceTree = "<group>"; };
 		9DE31279E3B54345098F3A81 /* Pods-WantToGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				2794391C21A657AA0066E7F5 /* WGViewController.swift */,
+				2797B0AB21AF8FD900D47643 /* WGTableViewController.swift */,
 				2794391E21A657BA0066E7F5 /* WGView.swift */,
 				2794393821A958E50066E7F5 /* WGModel.swift */,
 				2797B09721AD4AE100D47643 /* WGViewModel.swift */,
@@ -297,6 +310,8 @@
 		2797B08221AD1B7D00D47643 /* Designer */ = {
 			isa = PBXGroup;
 			children = (
+				2797B0A621AF841000D47643 /* View */,
+				2797B0A521AF840600D47643 /* Model */,
 				2797B09121AD1E6700D47643 /* Controller */,
 			);
 			path = Designer;
@@ -384,6 +399,25 @@
 				2797B0A321AE461300D47643 /* WGGuangShopingModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2797B0A521AF840600D47643 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2797B0A721AF843300D47643 /* WGDesignerRecommendModel.swift */,
+				2797B0A921AF844900D47643 /* WGDesignerTagsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2797B0A621AF841000D47643 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2797B0AD21AF952800D47643 /* WGDesignerHeaderView.swift */,
+				2797B0AF21AFD58C00D47643 /* WGDesingerSectionHeaderView.swift */,
+				2797B0B121AFE5C600D47643 /* WGDesingerTagCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		65C17CC0A77246EC042E3731 /* Pods */ = {
@@ -600,18 +634,23 @@
 				2794392B21A802170066E7F5 /* NetworkManager.swift in Sources */,
 				2797B08121ACEB6D00D47643 /* WGConstants.swift in Sources */,
 				2797B0A021AD534F00D47643 /* UIView+Create.swift in Sources */,
+				2797B0AA21AF844900D47643 /* WGDesignerTagsModel.swift in Sources */,
 				2794393921A958E60066E7F5 /* WGModel.swift in Sources */,
 				2794391F21A657BA0066E7F5 /* WGView.swift in Sources */,
+				2797B0A821AF843400D47643 /* WGDesignerRecommendModel.swift in Sources */,
 				2794393721A9476E0066E7F5 /* HomeTopicModel.swift in Sources */,
 				2794393321A940AB0066E7F5 /* MYLProgressHUD.swift in Sources */,
+				2797B0B221AFE5C600D47643 /* WGDesingerTagCell.swift in Sources */,
 				2794393021A931FF0066E7F5 /* Logic.swift in Sources */,
 				2794392621A7D2EA0066E7F5 /* NSString+Extension.swift in Sources */,
 				2794391D21A657AA0066E7F5 /* WGViewController.swift in Sources */,
+				2797B0AE21AF952900D47643 /* WGDesignerHeaderView.swift in Sources */,
 				2797B08D21AD1DDE00D47643 /* WGDesignerViewController.swift in Sources */,
 				2797B0A221AE2F2A00D47643 /* WGGuangShoppingBannerCell.swift in Sources */,
 				2794392121A657D80066E7F5 /* MYLCardPageView.swift in Sources */,
 				2794393D21AAA4660066E7F5 /* MainTabBarController.swift in Sources */,
 				2794393B21AA91C50066E7F5 /* WGWebViewController.swift in Sources */,
+				2797B0AC21AF8FD900D47643 /* WGTableViewController.swift in Sources */,
 				2797B09321AD331500D47643 /* WGThemeSelectController.swift in Sources */,
 				2797B09821AD4AE100D47643 /* WGViewModel.swift in Sources */,
 				2797B0A421AE461300D47643 /* WGGuangShopingModel.swift in Sources */,
@@ -623,6 +662,7 @@
 				2794392321A690350066E7F5 /* MYLCardCollectionFlowLayout.swift in Sources */,
 				2797B09E21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift in Sources */,
 				2797B08921AD1DC800D47643 /* WGGuangViewController.swift in Sources */,
+				2797B0B021AFD58C00D47643 /* WGDesingerSectionHeaderView.swift in Sources */,
 				279438EB21A6509E0066E7F5 /* AppDelegate.swift in Sources */,
 				2794392921A802070066E7F5 /* NetworkAPI.swift in Sources */,
 				2797B08721AD1D2600D47643 /* WGMineViewController.swift in Sources */,

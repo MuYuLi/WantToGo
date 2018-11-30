@@ -10,23 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WantToGo/Library/Network/NetworkManager.swift"
-            timestampString = "565078127.799773"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "NetworkRequest(_:completion:failed:errorResult:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WantToGo/Library/Network/NetworkManager.swift"
-            timestampString = "565078127.800527"
+            timestampString = "565153536.885237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -42,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WantToGo/Source/Theme/Controller/WGThemeSelectController.swift"
-            timestampString = "565093478.935788"
+            timestampString = "565181152.945931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -131,13 +115,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WantToGo/Source/Guang/Controller/WGGuangViewController.swift"
-            timestampString = "565093478.937429"
+            filePath = "WantToGo/Source/Designer/Controller/WGDesignerViewController.swift"
+            timestampString = "565181152.9474241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "categoryDataArray"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "recommendDataModel"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

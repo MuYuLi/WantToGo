@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WGGuangViewController: WGViewController,UITableViewDelegate,UITableViewDataSource {
+class WGGuangViewController: WGTableViewController {
 
     var headerView : WGGuangCatrgoryHeaderView?
     
@@ -44,8 +44,6 @@ class WGGuangViewController: WGViewController,UITableViewDelegate,UITableViewDat
         }
     }
     
-    var tableView : UITableView?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,24 +58,14 @@ class WGGuangViewController: WGViewController,UITableViewDelegate,UITableViewDat
         self.loadLovesData()
         
     }
-    
-    func initTableView() -> Void {
-        
-        self.tableView = UITableView.init(frame: CGRect.init(x: 0, y: CGFloat(STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT), width: kMainScreenWidth, height: IPHONE_CONTENT_HEIGHT), style: .plain)
-        
-        self.tableView?.delegate = self
-        self.tableView?.dataSource = self
-        self.view.addSubview(self.tableView!)
-        
-    }
 
     //MARK: --------- UITableViewDelegate,UITableViewDataSource
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.shoppingDataArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCell(withIdentifier: "WGGuangShoppingBannerCell")
         
@@ -96,7 +84,7 @@ class WGGuangViewController: WGViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 450
+        return 420
     }
     
 //    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

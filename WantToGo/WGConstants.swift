@@ -19,7 +19,6 @@ let TAB_BAR_HEIGHT = UIApplication.shared.statusBarFrame.size.height>20 ? 83:49
 let NAV_BAR_HEIGHT = 44
 let IPHONE_CONTENT_HEIGHT = kMainScreenHeight - CGFloat(NAV_BAR_HEIGHT + STATUS_BAR_HEIGHT + TAB_BAR_HEIGHT)
 
-
 let safeAreaInsets = UIEdgeInsets(top: 44, left: 0, bottom: 34, right: 0)
 
 //view.safeAreaInsets要在viewDidLoad之后调用才有正确的值，所以可以写一个全局常量，默认lazy属性，延时加载只赋值一次
@@ -30,4 +29,8 @@ let SafeAreaInsets: UIEdgeInsets = {
     }
     return safeAreaInsets
 } ()
+
+
+
+let KMainColor = UIColor(r: 214, g: 164, b: 49)
 

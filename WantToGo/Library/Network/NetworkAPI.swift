@@ -22,8 +22,9 @@ enum NetworkAPI {
     case guangChoiceApi(Dict:[String:Any])//精选
     case guangLovesApi(Dict:[String:Any])//大家喜欢
     
-    
-    
+    //Designer
+    case designerRecommendApi(Dict:[String:Any])//头部推荐
+    case designerTagsApi(Dict:[String:Any])//tag
 
     
     
@@ -70,8 +71,14 @@ extension NetworkAPI : TargetType {
             return .requestParameters(parameters: dict, encoding: URLEncoding.default)
         case let .guangLovesApi(dict)://大家喜欢c
             return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+          
             
-        
+        //Designer
+        case let .designerRecommendApi(dict)://
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+        case let .designerTagsApi(dict)://
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+            
             
         case .testApi:
             return .requestPlain
@@ -109,6 +116,11 @@ extension NetworkAPI : TargetType {
         case .guangLovesApi://大家喜欢c
             return "ios/allfaver"
             
+        //Designer
+        case .designerRecommendApi://头部推荐
+            return "designer2/tag/index"
+        case .designerTagsApi://tags
+            return "designer2/recommend/operate"
             
             
             

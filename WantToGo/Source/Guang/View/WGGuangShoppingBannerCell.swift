@@ -37,7 +37,9 @@ class WGGuangShoppingBannerCell: UITableViewCell {
                     itemView.tipImageV?.isHidden = !((item.originalPrice! - item.price!) > 0)
                     
                 }
-                
+                let view = UIView.init(frame: CGRect.init(x: itemViewWidth*itemDataArray!.count, y: 0, width: 30, height: 50))
+                 self.itemsSupView?.addSubview(view)
+                view.backgroundColor = UIColor.red
                 self.itemsSupView?.contentSize = CGSize.init(width: itemDataArray!.count*itemViewWidth, height: 0)
             }
         }
@@ -54,6 +56,7 @@ class WGGuangShoppingBannerCell: UITableViewCell {
         self.contentView.addSubview(self.shoppingBannerView!)
         
         self.itemsSupView = UIScrollView.init(frame: CGRect.zero)
+        self.itemsSupView?.showsHorizontalScrollIndicator = false
         self.contentView.addSubview(self.itemsSupView!)
         
         self.shoppingBannerView?.snp.makeConstraints({ (make) in
@@ -65,7 +68,6 @@ class WGGuangShoppingBannerCell: UITableViewCell {
             make.left.bottom.right.equalTo(self.contentView)
             make.top.equalTo(self.shoppingBannerView!.snp.bottom)
         })
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -152,7 +154,7 @@ class WGGuangShoppingBannerView: UIControl {
         self.cutLine?.snp.makeConstraints({ (make) in
             make.centerX.equalTo(self.contentImageV!)
             make.top.equalTo(self.titleLabel!.snp.bottom).offset(10)
-            make.size.equalTo(CGSize.init(width: 40, height: 1))
+            make.size.equalTo(CGSize.init(width: 30, height: 1))
         })
         
         self.nameLabel?.snp.makeConstraints({ (make) in
@@ -162,7 +164,7 @@ class WGGuangShoppingBannerView: UIControl {
         self.allButton?.snp.makeConstraints({ (make) in
             make.centerX.equalTo(self.contentImageV!)
             make.top.equalTo(self.nameLabel!.snp.bottom).offset(20)
-            make.size.equalTo(CGSize.init(width: 80, height: 20))
+            make.size.equalTo(CGSize.init(width: 70, height: 30))
         })
         self.arrowsImageV?.snp.makeConstraints({ (make) in
             make.centerX.equalTo(self.contentImageV!)
