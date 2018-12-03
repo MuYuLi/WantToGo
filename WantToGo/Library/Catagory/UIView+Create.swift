@@ -14,6 +14,7 @@ extension UILabel {
         
         let label = UILabel()
         label.textAlignment = textAlignment
+        label.frame = frame
         label.backgroundColor = UIColor.clear
         label.text = text;
         label.backgroundColor = backColor;

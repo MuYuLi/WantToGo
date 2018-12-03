@@ -34,3 +34,19 @@ let SafeAreaInsets: UIEdgeInsets = {
 
 let KMainColor = UIColor(r: 214, g: 164, b: 49)
 
+let KBackgroudColor = UIColor(r: 241, g: 241, b: 241)
+
+let grayColor = UIColor.gray
+let whiteColor = UIColor.white
+
+
+func setFont(font : Int) -> UIFont{
+    
+    let font = UIFont.systemFont(ofSize: CGFloat(font))
+    return font
+}
+let font12 = setFont(font: 12)
+let font13 = setFont(font: 13)
+let font14 = setFont(font: 14)
+let font15 = setFont(font: 15)
+let font16 = setFont(font: 16)

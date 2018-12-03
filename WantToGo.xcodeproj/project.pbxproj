@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2717676D21B4BDF500744DCD /* WGTaDiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717676C21B4BDF500744DCD /* WGTaDiscoverModel.swift */; };
+		2717677021B4C2DD00744DCD /* WGTaDiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */; };
 		279438EB21A6509E0066E7F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279438EA21A6509E0066E7F5 /* AppDelegate.swift */; };
 		279438F021A6509E0066E7F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279438EE21A6509E0066E7F5 /* Main.storyboard */; };
 		279438F221A650A20066E7F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279438F121A650A20066E7F5 /* Assets.xcassets */; };
@@ -70,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantToGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2717676C21B4BDF500744DCD /* WGTaDiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaDiscoverModel.swift; sourceTree = "<group>"; };
+		2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaDiscoverCell.swift; sourceTree = "<group>"; };
 		279438E721A6509E0066E7F5 /* WantToGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantToGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		279438EA21A6509E0066E7F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		279438EF21A6509E0066E7F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +152,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2717676B21B4BD4700744DCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2717676C21B4BDF500744DCD /* WGTaDiscoverModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2717676E21B4C2C300744DCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		279438DE21A6509E0066E7F5 = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +340,8 @@
 		2797B08321AD1B8D00D47643 /* Ta */ = {
 			isa = PBXGroup;
 			children = (
+				2717676E21B4C2C300744DCD /* View */,
+				2717676B21B4BD4700744DCD /* Model */,
 				2797B09021AD1E5900D47643 /* Controller */,
 			);
 			path = Ta;
@@ -647,6 +669,7 @@
 				2797B0AE21AF952900D47643 /* WGDesignerHeaderView.swift in Sources */,
 				2797B08D21AD1DDE00D47643 /* WGDesignerViewController.swift in Sources */,
 				2797B0A221AE2F2A00D47643 /* WGGuangShoppingBannerCell.swift in Sources */,
+				2717676D21B4BDF500744DCD /* WGTaDiscoverModel.swift in Sources */,
 				2794392121A657D80066E7F5 /* MYLCardPageView.swift in Sources */,
 				2794393D21AAA4660066E7F5 /* MainTabBarController.swift in Sources */,
 				2794393B21AA91C50066E7F5 /* WGWebViewController.swift in Sources */,
@@ -667,6 +690,7 @@
 				2794392921A802070066E7F5 /* NetworkAPI.swift in Sources */,
 				2797B08721AD1D2600D47643 /* WGMineViewController.swift in Sources */,
 				2797B08B21AD1DD200D47643 /* WGTaViewController.swift in Sources */,
+				2717677021B4C2DD00744DCD /* WGTaDiscoverCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

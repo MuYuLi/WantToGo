@@ -130,7 +130,9 @@ class WGDesignerViewController: WGTableViewController {
         NetworkRequest(.designerRecommendApi(Dict: dict as! [String : Any])){ (respose) -> (Void) in
             
             if let tagsModel = WGDesignerTagsModel.deserialize(from: respose){
-                self.tagsModelArray = tagsModel.data! as NSArray
+                if tagsModel.code == SuccessCode {
+                    self.tagsModelArray = tagsModel.data! as NSArray
+                }
             }
         }
     }
@@ -141,7 +143,10 @@ class WGDesignerViewController: WGTableViewController {
         NetworkRequest(.designerTagsApi(Dict: dict as! [String : Any])){ (respose) -> (Void) in
             
             if let recommendModel = WGDesignerRecommendModel.deserialize(from: respose){
-                self.recommendDataModel = recommendModel.data! as WGDesignerRecommendDataModel
+                if recommendModel.code == SuccessCode {
+                    self.recommendDataModel = recommendModel.data! as WGDesignerRecommendDataModel
+                }else{
+                }
             }
         }
     }

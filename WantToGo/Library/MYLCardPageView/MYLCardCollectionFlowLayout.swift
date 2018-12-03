@@ -21,10 +21,10 @@ class MYLCardCollectionCell : UICollectionViewCell {
         self.contentView.addSubview(self.backgroundImageV!)
         self.backgroundImageV?.image = UIImage.init(named: "theme_magazine")
         
-        self.imageV = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height - 20))
+        self.imageV = UIImageView.init(frame: CGRect.init(x: 0, y: 15, width: self.frame.size.width, height: self.frame.size.height - 35))
         self.contentView.addSubview(self.imageV!)
       
-        self.shadowImageV = UIImageView.init(frame:CGRect.init(x: 0, y: 0, width: 20, height: self.imageV!.frame.size.height))
+        self.shadowImageV = UIImageView.init(frame:CGRect.init(x: 0, y: 15, width: 20, height: self.imageV!.frame.size.height))
         self.contentView.addSubview(self.shadowImageV!)
         self.shadowImageV?.image = UIImage.init(named: "theme_shadow")
         

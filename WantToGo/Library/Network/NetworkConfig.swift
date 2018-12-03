@@ -14,3 +14,4 @@ let Moya_baseURL = "https://api.xiangqu.com/"
 let RESULT_CODE = "code" //状态码
 let RESULT_MESSAGE = "msg" //错误消息提示
 
+let SuccessCode = "200"

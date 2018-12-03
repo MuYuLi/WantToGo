@@ -38,7 +38,7 @@ class WGGuangCatrgoryHeaderView: WGView {
                     
                 }
                 let bottomViwe = UIView.init(frame: CGRect.zero)
-                bottomViwe.backgroundColor = UIColor.lightGray
+                bottomViwe.backgroundColor = KBackgroudColor
                 self.addSubview(bottomViwe)
                 bottomViwe.snp.makeConstraints { (make) in
                     make.bottom.left.right.equalToSuperview()

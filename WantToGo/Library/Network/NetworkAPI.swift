@@ -26,6 +26,9 @@ enum NetworkAPI {
     case designerRecommendApi(Dict:[String:Any])//头部推荐
     case designerTagsApi(Dict:[String:Any])//tag
 
+    //TA
+    case taDiscoverApi(Dict:[String:Any])//发现
+    
     
     
     case testApiDict(Dict:[String:Any])//把参数包装成字典传入
@@ -79,6 +82,9 @@ extension NetworkAPI : TargetType {
         case let .designerTagsApi(dict)://
             return .requestParameters(parameters: dict, encoding: URLEncoding.default)
             
+        //TA
+        case let .taDiscoverApi(dict):
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
             
         case .testApi:
             return .requestPlain
@@ -121,6 +127,11 @@ extension NetworkAPI : TargetType {
             return "designer2/tag/index"
         case .designerTagsApi://tags
             return "designer2/recommend/operate"
+            
+        //TA
+        case .taDiscoverApi://发现
+            return "post/recommends"
+            
             
             
             

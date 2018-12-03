@@ -74,7 +74,9 @@ class WGThemeViewController: WGViewController {
         NetworkRequest(.themePageTopicApi(Dict: dict as! [String : Any])){ (respose) -> (Void) in
             
             if let homeTopicModel = HomeTopicModel.deserialize(from: respose){
-                self.dataArray = homeTopicModel.data! as NSArray
+                if homeTopicModel.code == SuccessCode {
+                    self.dataArray = homeTopicModel.data! as NSArray
+                }
             }
         }
     }

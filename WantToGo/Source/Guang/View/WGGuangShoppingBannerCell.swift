@@ -8,40 +8,29 @@
 
 import UIKit
 
-class WGGuangShoppingBannerCell: UITableViewCell {
+enum SelectItemsType {
+    case SelectItemsType_shoppingBanner
+    case SelectItemsType_items
+}
+
+typealias ScrollViewLoadMoreBlock = () -> Void
+typealias SelectItemsBlock = (_ type : SelectItemsType, _ index : NSInteger) -> Void
+
+class WGGuangShoppingBannerCell: UITableViewCell,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
     let bannerViewHeight = 230
     let itemViewHeight = 200
     let itemViewWidth = 120
     var shoppingBannerView : WGGuangShoppingBannerView?
     
-    var itemsSupView : UIScrollView?
+    var itemsSupView : UICollectionView?
+    var scrollViewLoadMoreBlock : ScrollViewLoadMoreBlock?
+    var selectItemsBlock : SelectItemsBlock?
     
-    var itemDataArray : NSArray? {
-        
+    var itemDataArray : NSArray?
+    {
         didSet {
-            if itemDataArray!.count > 0 {
-                
-                self.removeItemViews()
-                for item in itemDataArray as! [WGGuangShopingItem] {
-                    
-                    let i : Int = itemDataArray!.index(of: item)
-                    let itemView = WGGuangShoppingItemView.init(frame: CGRect.init(x:itemViewWidth*i, y: 0, width: itemViewWidth, height: itemViewHeight))
-                    self.itemsSupView?.addSubview(itemView)
-                    
-                    itemView.imageV?.kf.setImage(with: URL(string: item.image!))
-                    itemView.titleLabel?.text = item.brandName
-                    itemView.nameLabel?.text = item.keyword
-                    itemView.priceLabel?.text = "￥" + "\(item.price!)"
-                    
-                    itemView.tipImageV?.isHidden = !((item.originalPrice! - item.price!) > 0)
-                    
-                }
-                let view = UIView.init(frame: CGRect.init(x: itemViewWidth*itemDataArray!.count, y: 0, width: 30, height: 50))
-                 self.itemsSupView?.addSubview(view)
-                view.backgroundColor = UIColor.red
-                self.itemsSupView?.contentSize = CGSize.init(width: itemDataArray!.count*itemViewWidth, height: 0)
-            }
+            self.itemsSupView?.reloadData()
         }
     }
     
@@ -54,15 +43,30 @@ class WGGuangShoppingBannerCell: UITableViewCell {
         
         self.shoppingBannerView = WGGuangShoppingBannerView.init(frame: CGRect.zero)
         self.contentView.addSubview(self.shoppingBannerView!)
-        
-        self.itemsSupView = UIScrollView.init(frame: CGRect.zero)
-        self.itemsSupView?.showsHorizontalScrollIndicator = false
-        self.contentView.addSubview(self.itemsSupView!)
-        
+        self.shoppingBannerView?.addTarget(self, action: #selector(self.selectShoppingBannerView(_ :)), for: .touchUpInside)
         self.shoppingBannerView?.snp.makeConstraints({ (make) in
             make.top.left.right.equalTo(self.contentView)
             make.height.equalTo(bannerViewHeight)
         })
+        
+        self.initCollectionView()
+    }
+
+    func initCollectionView() -> Void{
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize.init(width: itemViewWidth, height: itemViewHeight)
+        layout.scrollDirection = .horizontal;
+
+        self.itemsSupView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
+        self.itemsSupView?.delegate = self
+        self.itemsSupView?.dataSource = self
+        self.itemsSupView?.backgroundColor = UIColor.white
+        self.itemsSupView?.showsHorizontalScrollIndicator = false
+        self.contentView.addSubview(self.itemsSupView!)
+        
+        self.itemsSupView?.register(WGGuangShoppingItemView.self, forCellWithReuseIdentifier: "WGGuangShoppingItemView")
+        self.itemsSupView?.register(WGGuangCollectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footerView")
         
         self.itemsSupView?.snp.makeConstraints({ (make) in
             make.left.bottom.right.equalTo(self.contentView)
@@ -70,31 +74,98 @@ class WGGuangShoppingBannerCell: UITableViewCell {
         })
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+    //MARK: --------- Action
+    
+    @objc func selectShoppingBannerView(_ sender : UIControl) -> Void {
+        if self.selectItemsBlock != nil {
+            self.selectItemsBlock!(.SelectItemsType_shoppingBanner,-1)
+        }
     }
     
     func removeItemViews() -> Void {
         for view : UIView in self.itemsSupView!.subviews {
-            if (view is WGGuangShoppingItemView) {
-                view.removeFromSuperview()
-            }
+            view.removeFromSuperview()
         }
     }
     
     public func loadData(model : WGGuangShopingContentModel) -> Void {
         
         self.shoppingBannerView?.contentImageV?.kf.setImage(with: URL(string: model.image!))
-    
         self.shoppingBannerView?.titleLabel?.text = model.title
         self.shoppingBannerView?.nameLabel?.text = model.name
         
-        self.itemDataArray = model.items! as NSArray
+    }
+    
+    //MARK: --------- UIScrollViewDelegate
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let scrollX = scrollView.contentOffset.x
+        
+        if CGFloat(scrollX+kMainScreenWidth) > CGFloat(self.itemDataArray!.count*itemViewWidth+50) {
+            
+            if self.scrollViewLoadMoreBlock != nil {
+                self.scrollViewLoadMoreBlock!()
+            }
+        }
+    }
+    
+    //MARK: --------- UICollectionViewDataSource,UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.itemDataArray!.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell : WGGuangShoppingItemView = collectionView.dequeueReusableCell(withReuseIdentifier: "WGGuangShoppingItemView", for: indexPath) as! WGGuangShoppingItemView
+        
+        if indexPath.row < self.itemDataArray!.count {
+            
+            let item = self.itemDataArray?.object(at: indexPath.row) as! WGGuangShopingItem
+            
+            cell.imageV?.kf.setImage(with: URL(string: item.image!))
+            cell.titleLabel?.text = item.brandName
+            cell.nameLabel?.text = item.keyword
+            cell.priceLabel?.text = "￥" + "\(item.price!)"
+            cell.tipImageV?.isHidden = !((item.originalPrice! - item.price!) > 0)
+            
+        }
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
+    {
+        return CGSize (width: 40, height: itemViewHeight)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        var footerView = WGGuangCollectionFooterView();
+    
+        if kind == UICollectionView.elementKindSectionFooter {
+            
+            footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footerView", for: indexPath) as! WGGuangCollectionFooterView
+        }
+        return footerView
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+  
+        
+        
+        
+        
+        
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
     }
 }
 
@@ -114,6 +185,7 @@ class WGGuangShoppingBannerView: UIControl {
         maskView.backgroundColor = UIColor.black
         maskView.alpha = 0.5
         self.contentImageV = UIImageView.init(frame: CGRect.zero)
+        self.contentImageV?.isUserInteractionEnabled = true
         self.titleLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.white, font: UIFont.systemFont(ofSize: 16))
         self.cutLine = UIView.init(frame: CGRect.zero)
         self.cutLine?.backgroundColor = UIColor.white
@@ -171,7 +243,15 @@ class WGGuangShoppingBannerView: UIControl {
             make.bottom.equalTo(self.contentImageV!.snp.bottom).offset(1)
         })
         
+        self.addTarget(self, action: #selector(self.selectView(_ :)), for: .touchUpInside)
+        
+        
     }
+    
+    @objc func selectView(_ sender : UIButton) -> Void {
+        print("222345676543456765432")
+    }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -180,7 +260,7 @@ class WGGuangShoppingBannerView: UIControl {
 }
 
 
-class WGGuangShoppingItemView: UIControl {
+class WGGuangShoppingItemView: UICollectionViewCell {
     
     var imageV : UIImageView?
     var tipImageV : UIImageView?
@@ -189,6 +269,7 @@ class WGGuangShoppingItemView: UIControl {
     var nameLabel : UILabel?
     var priceLabel : UILabel?
 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -198,18 +279,18 @@ class WGGuangShoppingItemView: UIControl {
         self.nameLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.black, font: UIFont.systemFont(ofSize: 12))
         self.priceLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.black, font: UIFont.systemFont(ofSize: 12))
         
-        self.addSubview(self.imageV!)
-        self.addSubview(self.tipImageV!)
-        self.addSubview(self.titleLabel!)
-        self.addSubview(self.nameLabel!)
-        self.addSubview(self.priceLabel!)
+        self.contentView.addSubview(self.imageV!)
+        self.contentView.addSubview(self.tipImageV!)
+        self.contentView.addSubview(self.titleLabel!)
+        self.contentView.addSubview(self.nameLabel!)
+        self.contentView.addSubview(self.priceLabel!)
         
         self.tipImageV?.image = UIImage.init(named: "")
 
         self.imageV?.snp.makeConstraints({ (make) in
             make.centerX.equalToSuperview()
-            make.top.left.equalTo(self).offset(15)
-            make.right.equalTo(self).offset(-15)
+            make.top.left.equalTo(self.contentView).offset(15)
+            make.right.equalTo(self.contentView).offset(-15)
             make.height.equalTo(self.imageV!.snp.width)
         })
        
@@ -232,6 +313,28 @@ class WGGuangShoppingItemView: UIControl {
             make.top.equalTo(self.nameLabel!.snp.bottom).offset(8)
         })
         
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+}
+
+class WGGuangCollectionFooterView: UICollectionReusableView {
+    
+    var moreLabel : UILabel?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = KBackgroudColor
+        self.moreLabel = UILabel.createLabel(frame: CGRect.zero, text: "查看更多", textColor:KMainColor)
+        self.moreLabel?.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
+        self.addSubview(self.moreLabel!)
+        
+        self.moreLabel?.snp.makeConstraints({ (make) in
+            make.center.equalTo(self)
+        })
     }
     
     required init?(coder aDecoder: NSCoder) {
