@@ -10,6 +10,8 @@ import UIKit
 
 class WGThemeViewController: WGViewController {
 
+    var showAnimationImageView : ThemeAnimationImageView?
+    
     var titleView : UIImageView?
     
     var cardPageView : MYLCardPageView?
@@ -20,6 +22,11 @@ class WGThemeViewController: WGViewController {
                 imgArray.add(homeTopicItem.imageMin!)
             }
             self.cardPageView?.imageNameArray = imgArray
+            self.showAnimationImageView = ThemeAnimationImageView.init(frame: CGRect.init(x: 100, y: 200, width: kMainScreenWidth - 200, height: kMainScreenHeight - 400))
+            self.showAnimationImageView?.kf.setImage(with: URL(string: (imgArray.object(at: 0) as! String)))
+            self.view.addSubview(self.showAnimationImageView!)
+            self.showAnimationImageView?.showAnimation()
+            
         }
     }
     
@@ -80,6 +87,7 @@ class WGThemeViewController: WGViewController {
             }
         }
     }
+    
     func selectPageItem(index: NSInteger) -> Void {
         if index < (self.dataArray?.count)! {
             

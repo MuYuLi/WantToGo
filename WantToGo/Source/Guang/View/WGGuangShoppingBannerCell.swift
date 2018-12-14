@@ -30,6 +30,7 @@ class WGGuangShoppingBannerCell: UITableViewCell,UICollectionViewDataSource,UICo
     var itemDataArray : NSArray?
     {
         didSet {
+            self.itemsSupView?.contentOffset = CGPoint.init(x: 0, y: 0)
             self.itemsSupView?.reloadData()
         }
     }
@@ -92,8 +93,8 @@ class WGGuangShoppingBannerCell: UITableViewCell,UICollectionViewDataSource,UICo
     public func loadData(model : WGGuangShopingContentModel) -> Void {
         
         self.shoppingBannerView?.contentImageV?.kf.setImage(with: URL(string: model.image!))
-        self.shoppingBannerView?.titleLabel?.text = model.title
-        self.shoppingBannerView?.nameLabel?.text = model.name
+        self.shoppingBannerView?.titleLabel?.text = model.name
+        self.shoppingBannerView?.nameLabel?.text = model.title
         
     }
     
@@ -186,10 +187,10 @@ class WGGuangShoppingBannerView: UIControl {
         maskView.alpha = 0.5
         self.contentImageV = UIImageView.init(frame: CGRect.zero)
         self.contentImageV?.isUserInteractionEnabled = true
-        self.titleLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.white, font: UIFont.systemFont(ofSize: 16))
+        self.titleLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.white, font: UIFont.systemFont(ofSize: 18))
         self.cutLine = UIView.init(frame: CGRect.zero)
         self.cutLine?.backgroundColor = UIColor.white
-        self.nameLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.white, font: UIFont.systemFont(ofSize: 10))
+        self.nameLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.white, font: UIFont.systemFont(ofSize: 14))
     
         self.allButton = UIButton.init(type: .custom)
         self.allButton?.setTitle("查看全部", for: .normal)
@@ -220,23 +221,23 @@ class WGGuangShoppingBannerView: UIControl {
         
         self.titleLabel?.snp.makeConstraints({ (make) in
             make.centerX.equalTo(self.contentImageV!)
-            make.top.equalTo(self.contentImageV!.snp.top).offset(80)
+            make.top.equalTo(self.contentImageV!.snp.top).offset(60)
         })
         
         self.cutLine?.snp.makeConstraints({ (make) in
             make.centerX.equalTo(self.contentImageV!)
-            make.top.equalTo(self.titleLabel!.snp.bottom).offset(10)
-            make.size.equalTo(CGSize.init(width: 30, height: 1))
+            make.top.equalTo(self.titleLabel!.snp.bottom).offset(8)
+            make.size.equalTo(CGSize.init(width: 25, height: 1))
         })
         
         self.nameLabel?.snp.makeConstraints({ (make) in
             make.centerX.equalTo(self.contentImageV!)
-            make.top.equalTo(self.cutLine!.snp.bottom).offset(10)
+            make.top.equalTo(self.cutLine!.snp.bottom).offset(8)
         })
         self.allButton?.snp.makeConstraints({ (make) in
             make.centerX.equalTo(self.contentImageV!)
             make.top.equalTo(self.nameLabel!.snp.bottom).offset(20)
-            make.size.equalTo(CGSize.init(width: 70, height: 30))
+            make.size.equalTo(CGSize.init(width: 65, height: 25))
         })
         self.arrowsImageV?.snp.makeConstraints({ (make) in
             make.centerX.equalTo(self.contentImageV!)

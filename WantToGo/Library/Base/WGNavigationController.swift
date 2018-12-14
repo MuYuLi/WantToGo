@@ -70,10 +70,14 @@ class WGNavigationController: UINavigationController {
         //修改返回按钮样式
         barButtonItem.setBackButtonBackgroundImage(UIImage.init(named: "btn_back_b"), for:  UIControl.State.normal, barMetrics: UIBarMetrics.compact)
         
-        //设置状态栏样式
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        
     }
+    
+    //设置状态栏样式
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//
+//        return .lightContent
+//
+//    }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         //修改返回文字

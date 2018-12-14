@@ -14,7 +14,21 @@ class WGViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.white
-        
     }
-
+    
+    /// 状态栏状态
+    public var statusBarStyle : UIStatusBarStyle = .default {
+        didSet {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
+    func setStatusBarBackground(color : UIColor) -> Void {
+        let statusBar = (UIApplication.shared.value(forKey: "statusBarWindow") as! UIView).value(forKey: "statusBar") as! UIView
+        statusBar.backgroundColor = color;
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return self.statusBarStyle
+    }
 }

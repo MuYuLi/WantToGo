@@ -9,8 +9,8 @@
 import Foundation
 import Moya
 import Alamofire
-
-
+import SVProgressHUD
+import Toast
 /// 成功回调
 typealias successCallback = ((String) -> (Void))
 /// 超时时长
@@ -162,13 +162,12 @@ func NetworkRequest(_ target: NetworkAPI, completion: @escaping successCallback,
 ///   - errorResult: 错误
 func NetworkRequest(_ target : NetworkAPI, completion: @escaping successCallback, failed: failedCallback?, errorResult: errorCallback?){
     
-    if Logic.isNetworkConnect() {
-        print("提示用户网络似乎出现了问题")
-//        return
+    if Logic.isNetworkConnect() == false {
+        WGToast.showToast(title: "网络似乎出现了问题")
     }
-    
+    SVProgressHUD.show()
     Provider.request(target) {(result) in
-        
+        SVProgressHUD.dismiss()
         switch result{
             
         case let .success(response):

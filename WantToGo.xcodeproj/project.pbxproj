@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2717676D21B4BDF500744DCD /* WGTaDiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717676C21B4BDF500744DCD /* WGTaDiscoverModel.swift */; };
 		2717677021B4C2DD00744DCD /* WGTaDiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */; };
+		2717677221B7689100744DCD /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717677121B7689000744DCD /* UIImage+Color.swift */; };
+		2717677521B7DA6300744DCD /* WGMineCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717677421B7DA6200744DCD /* WGMineCollectionViewFlowLayout.swift */; };
+		278776A421BB6629003DADCF /* WGToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278776A321BB6629003DADCF /* WGToast.swift */; };
+		278776A721BB6E67003DADCF /* ThemeAnimationImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278776A621BB6E67003DADCF /* ThemeAnimationImageView.swift */; };
 		279438EB21A6509E0066E7F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279438EA21A6509E0066E7F5 /* AppDelegate.swift */; };
 		279438F021A6509E0066E7F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279438EE21A6509E0066E7F5 /* Main.storyboard */; };
 		279438F221A650A20066E7F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279438F121A650A20066E7F5 /* Assets.xcassets */; };
@@ -74,6 +78,10 @@
 		180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantToGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2717676C21B4BDF500744DCD /* WGTaDiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaDiscoverModel.swift; sourceTree = "<group>"; };
 		2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaDiscoverCell.swift; sourceTree = "<group>"; };
+		2717677121B7689000744DCD /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		2717677421B7DA6200744DCD /* WGMineCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGMineCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		278776A321BB6629003DADCF /* WGToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGToast.swift; sourceTree = "<group>"; };
+		278776A621BB6E67003DADCF /* ThemeAnimationImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeAnimationImageView.swift; sourceTree = "<group>"; };
 		279438E721A6509E0066E7F5 /* WantToGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantToGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		279438EA21A6509E0066E7F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		279438EF21A6509E0066E7F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,6 +172,22 @@
 			isa = PBXGroup;
 			children = (
 				2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2717677321B7DA3400744DCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2717677421B7DA6200744DCD /* WGMineCollectionViewFlowLayout.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		278776A521BB6E46003DADCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				278776A621BB6E67003DADCF /* ThemeAnimationImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +303,7 @@
 				2794392521A7D2EA0066E7F5 /* NSString+Extension.swift */,
 				2794394021AAAA8A0066E7F5 /* UIColor+Extention.swift */,
 				2797B09F21AD534F00D47643 /* UIView+Create.swift */,
+				2717677121B7689000744DCD /* UIImage+Color.swift */,
 			);
 			path = Catagory;
 			sourceTree = "<group>";
@@ -297,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				2794393221A940AB0066E7F5 /* MYLProgressHUD.swift */,
+				278776A321BB6629003DADCF /* WGToast.swift */,
 			);
 			path = HUD;
 			sourceTree = "<group>";
@@ -304,6 +330,7 @@
 		2794393421A9474B0066E7F5 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				278776A521BB6E46003DADCF /* View */,
 				2797B07F21AB85DE00D47643 /* Controller */,
 				2794393521A9475E0066E7F5 /* Model */,
 			);
@@ -361,6 +388,7 @@
 		2797B08521AD1BA300D47643 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				2717677321B7DA3400744DCD /* View */,
 				2797B08E21AD1E2D00D47643 /* Controller */,
 			);
 			path = Mine;
@@ -604,7 +632,9 @@
 				"${BUILT_PRODUCTS_DIR}/MYLCommonUI/MYLCommonUI.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -617,7 +647,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MYLCommonUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -658,6 +690,7 @@
 				2797B0A021AD534F00D47643 /* UIView+Create.swift in Sources */,
 				2797B0AA21AF844900D47643 /* WGDesignerTagsModel.swift in Sources */,
 				2794393921A958E60066E7F5 /* WGModel.swift in Sources */,
+				278776A721BB6E67003DADCF /* ThemeAnimationImageView.swift in Sources */,
 				2794391F21A657BA0066E7F5 /* WGView.swift in Sources */,
 				2797B0A821AF843400D47643 /* WGDesignerRecommendModel.swift in Sources */,
 				2794393721A9476E0066E7F5 /* HomeTopicModel.swift in Sources */,
@@ -673,16 +706,19 @@
 				2794392121A657D80066E7F5 /* MYLCardPageView.swift in Sources */,
 				2794393D21AAA4660066E7F5 /* MainTabBarController.swift in Sources */,
 				2794393B21AA91C50066E7F5 /* WGWebViewController.swift in Sources */,
+				2717677221B7689100744DCD /* UIImage+Color.swift in Sources */,
 				2797B0AC21AF8FD900D47643 /* WGTableViewController.swift in Sources */,
 				2797B09321AD331500D47643 /* WGThemeSelectController.swift in Sources */,
 				2797B09821AD4AE100D47643 /* WGViewModel.swift in Sources */,
 				2797B0A421AE461300D47643 /* WGGuangShopingModel.swift in Sources */,
 				2794394121AAAA8A0066E7F5 /* UIColor+Extention.swift in Sources */,
 				2794393F21AAA74D0066E7F5 /* WGNavigationController.swift in Sources */,
+				2717677521B7DA6300744DCD /* WGMineCollectionViewFlowLayout.swift in Sources */,
 				2797B09C21AD4CA700D47643 /* WGGuangCatrgoryModel.swift in Sources */,
 				2794392D21A802620066E7F5 /* NetworkConfig.swift in Sources */,
 				2797B07E21AB85CB00D47643 /* WGThemeViewController.swift in Sources */,
 				2794392321A690350066E7F5 /* MYLCardCollectionFlowLayout.swift in Sources */,
+				278776A421BB6629003DADCF /* WGToast.swift in Sources */,
 				2797B09E21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift in Sources */,
 				2797B08921AD1DC800D47643 /* WGGuangViewController.swift in Sources */,
 				2797B0B021AFD58C00D47643 /* WGDesingerSectionHeaderView.swift in Sources */,

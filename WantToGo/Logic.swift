@@ -15,7 +15,7 @@ class Logic {
     class func isNetworkConnect() -> Bool {
         
         let network = NetworkReachabilityManager()
-        return network?.isReachable ?? true //无返回就默认网络已连接
+        return network!.isReachable //无返回就默认网络已连接
     }
     
 

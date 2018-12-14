@@ -10,20 +10,23 @@ import UIKit
 
 class WGDesignerViewController: WGTableViewController {
 
-    let headerViewHeight : CGFloat = 200
+    let headerViewHeight : CGFloat = 250
     var selectIndex : NSInteger = 0
     
     var headerView : WGDesignerHeaderView?
     var sectionHeadV : WGDesingerSectionHeaderView?
     
+    var scrollOffsetY : CGFloat = 0
+    
+    var statusBarView : UIView?
+    var hasHeaderView : Bool = false
+    
     var recommendDataModel : WGDesignerRecommendDataModel?{
         didSet {
-            
-            self.headerView = WGDesignerHeaderView.init(frame: CGRect.zero)
+            self.headerView = WGDesignerHeaderView.init(frame: CGRect.init(x: 0, y:0, width: kMainScreenWidth, height: headerViewHeight))
             self.headerView?.loadUI(model: recommendDataModel!)
-            self.headerView?.frame = self.tableView!.bounds
-            self.headerView?.frame.size.height = headerViewHeight
             self.tableView?.tableHeaderView = self.headerView
+            self.hasHeaderView = true
         }
     }
     
@@ -37,17 +40,21 @@ class WGDesignerViewController: WGTableViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         super.viewWillAppear(animated)
+        
+        self.setStatusBar(scrollOffsetY: self.scrollOffsetY)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         super.viewWillDisappear(animated)
+        
+        self.statusBarStyle = .default
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView?.frame = CGRect.init(x: 0, y: CGFloat(-STATUS_BAR_HEIGHT), width: kMainScreenWidth, height: kMainScreenHeight - CGFloat(TAB_BAR_HEIGHT-STATUS_BAR_HEIGHT))
-        
+    
+        self.tableView?.frame = CGRect.init(x: 0, y: 0, width: kMainScreenWidth, height: kMainScreenHeight - CGFloat(TAB_BAR_HEIGHT))
         self.loadTagsData()
         self.loadRecommendData()
     
@@ -56,7 +63,28 @@ class WGDesignerViewController: WGTableViewController {
             self.selectIndex = index
             self.tableView?.reloadData()
         }
+        
+        self.statusBarView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kMainScreenWidth, height: CGFloat(STATUS_BAR_HEIGHT)))
+        self.statusBarView?.backgroundColor = UIColor.white
+        self.statusBarView?.isHidden = true
+        self.view.addSubview(self.statusBarView!)
+        
     }
+    
+    func setStatusBar(scrollOffsetY : CGFloat) -> Void {
+        
+        self.statusBarStyle = .default
+        self.statusBarView?.isHidden = false
+        if self.hasHeaderView == true {//有头视图
+            if (scrollOffsetY < headerViewHeight){
+                self.statusBarStyle = .lightContent
+                self.statusBarView?.isHidden = true
+            }
+        }
+    }
+    
+    
+    //MARK: --------- UITabelViewDelegate && UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numRow : NSInteger = 0
@@ -108,6 +136,8 @@ class WGDesignerViewController: WGTableViewController {
         return 50
     }
     
+    //MARK: --------- UIScrollViewDelegate
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let yOffset : CGFloat = scrollView.contentOffset.y
@@ -121,6 +151,9 @@ class WGDesignerViewController: WGTableViewController {
             self.headerView?.contentImageV!.frame = CGRect.init(x: -(kMainScreenWidth * scale - kMainScreenWidth) / 2, y: yOffset, width: kMainScreenWidth * scale, height: totalOffset)
             self.headerView?.maskBackView?.frame = self.headerView!.contentImageV!.frame
         }
+        
+        self.scrollOffsetY = yOffset
+        self.setStatusBar(scrollOffsetY: yOffset)
     }
     
     //MARK: --------- NetWorkData
@@ -132,6 +165,7 @@ class WGDesignerViewController: WGTableViewController {
             if let tagsModel = WGDesignerTagsModel.deserialize(from: respose){
                 if tagsModel.code == SuccessCode {
                     self.tagsModelArray = tagsModel.data! as NSArray
+                    
                 }
             }
         }
@@ -145,6 +179,7 @@ class WGDesignerViewController: WGTableViewController {
             if let recommendModel = WGDesignerRecommendModel.deserialize(from: respose){
                 if recommendModel.code == SuccessCode {
                     self.recommendDataModel = recommendModel.data! as WGDesignerRecommendDataModel
+                    self.setStatusBar(scrollOffsetY: self.scrollOffsetY)
                 }else{
                 }
             }

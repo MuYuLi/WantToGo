@@ -46,10 +46,12 @@ class WGDesignerHeaderView: UIControl {
         
         self.contentImageV?.snp.makeConstraints({ (make) in
             make.edges.equalTo(self)
+            make.top.equalTo(self).offset(CGFloat(-STATUS_BAR_HEIGHT))
         })
-      
+        
         self.maskBackView?.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentImageV!)
+            make.top.equalTo(self).offset(CGFloat(-STATUS_BAR_HEIGHT))
         }
         
         self.tagLabel?.snp.makeConstraints({ (make) in

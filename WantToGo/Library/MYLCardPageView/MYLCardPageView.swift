@@ -11,7 +11,7 @@ import Kingfisher
 
 typealias SelectItemBlock = (_ index: NSInteger) -> Void
 
-class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
+class MYLCardPageView: UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
 
     var selectItemBlock : SelectItemBlock?
     
@@ -19,6 +19,11 @@ class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSourc
     let itemSpacing : CGFloat = 10
     let ButtonHeight : CGFloat = 80
     let lastRow : NSInteger = 0
+    
+    
+    
+    var selectedIndex : NSInteger = 0
+    
     
     public var itemNumber : Int = 0
     var imageNameArray = NSMutableArray(){
@@ -50,7 +55,8 @@ class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSourc
         self.collectionView.delegate = self
         self.collectionView.register(MYLCardCollectionCell.self, forCellWithReuseIdentifier:"defaultCell")
         self.collectionView.contentSize = CGSize.init(width: self.frame.size.width, height: self.frame.size.height)
-        self.collectionView.clipsToBounds = true
+        self.collectionView.clipsToBounds = false
+        self.collectionView.isPagingEnabled = false
         self.collectionView.showsHorizontalScrollIndicator = false
         self.addSubview(self.collectionView)
     }
@@ -64,7 +70,6 @@ class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.itemNumber
     }
-
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -78,11 +83,50 @@ class MYLCardPageView: UIView,UICollectionViewDelegate,UICollectionViewDataSourc
         }
         return cell
     }
-    
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.selectItemBlock != nil {
             self.selectItemBlock!(indexPath.row)
         }
     }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+        // Destination x
+        let x = targetContentOffset.pointee.x
+        // Page width equals to cell width
+        let pageWidth = kMainScreenWidth - 45
+        // Check which way to move
+        let movedX = x - pageWidth * CGFloat(selectedIndex)
+        if movedX < -pageWidth * 0.5 {
+            // Move left
+            selectedIndex -= 1
+        } else if movedX > pageWidth * 0.5 {
+            // Move right
+            selectedIndex += 1
+        }
+        if abs(velocity.x) >= 2 {
+            targetContentOffset.pointee.x = pageWidth * CGFloat(selectedIndex)
+        } else {
+            // If velocity is too slow, stop and move with default velocity
+            targetContentOffset.pointee.x = scrollView.contentOffset.x
+            scrollView.setContentOffset(CGPoint(x: pageWidth * CGFloat(selectedIndex), y: scrollView.contentOffset.y), animated: true)
+        }
+        
+        
+//        let targetOffset : CGPoint = self.nearestTargetOffsetForOffset(offset: targetContentOffset.pointee)
+//
+//        targetContentOffset.pointee.x = targetOffset.x
+//        targetContentOffset.pointee.y = targetOffset.y
+    }
+
+    func nearestTargetOffsetForOffset(offset:CGPoint)->CGPoint{
+        let pageSize : CGFloat = kMainScreenWidth - 45
+        let page : Int = Int(roundf(Float(offset.x) / Float(pageSize)))
+        let targetX : CGFloat = CGFloat(pageSize) * CGFloat(page)
+
+        return CGPoint.init(x: targetX, y: offset.y)
+
+    }
+
 }

@@ -10,11 +10,18 @@ import UIKit
 
 class WGTaDiscoverCell: UITableViewCell {
     
+    let authorViewHeight = 60
+    let contentImageViewHeight = 320
+    let tipsViewHeight = 50
+    let commentViewHeight = 20
+    
     var authorView : WGTaDiscoverAuthorView?
     var contentImageView : WGTaDiscoverContentView?
     var commentView : WGTaDiscoverCommentView?
     var tipsView : WGTaDiscoverTipsView?
     
+    var comment0 : WGTaDiscoverCommentView?
+    var comment1 : WGTaDiscoverCommentView?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,26 +32,31 @@ class WGTaDiscoverCell: UITableViewCell {
         
         self.tipsView = WGTaDiscoverTipsView.init(frame: CGRect.zero)
         
+        self.comment0 = WGTaDiscoverCommentView.init(frame: CGRect.zero)
+        self.comment1 = WGTaDiscoverCommentView.init(frame: CGRect.zero)
+        
         self.contentView.addSubview(self.authorView!)
         self.contentView.addSubview(self.contentImageView!)
         self.contentView.addSubview(self.tipsView!)
         
+        self.contentView.addSubview(self.comment0!)
+        self.contentView.addSubview(self.comment1!)
+        
         self.authorView?.snp.makeConstraints({ (make) in
             make.top.right.left.equalToSuperview()
-            make.height.equalTo(60)
+            make.height.equalTo(authorViewHeight)
         })
         
         self.contentImageView?.snp.makeConstraints({ (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(self.authorView!.snp.bottom)
-            make.height.equalTo(320)
+            make.height.equalTo(contentImageViewHeight)
         })
         
         self.tipsView?.snp.makeConstraints({ (make) in
             make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(50)
+            make.height.equalTo(tipsViewHeight)
         })
-        
     }
     
     
@@ -56,6 +68,12 @@ class WGTaDiscoverCell: UITableViewCell {
         
         self.contentImageView?.postTitleLabel?.text = model.postTitle
 
+        self.contentImageView?.snp.remakeConstraints({ (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.authorView!.snp.bottom)
+            make.height.equalTo(contentImageViewHeight)
+        })
+        
         if model.contents!.count > 0 {
             
             let contentModel = (model.contents! as NSArray).object(at: 0) as! WGTaDiscoverContentsItem
@@ -71,16 +89,73 @@ class WGTaDiscoverCell: UITableViewCell {
             if model.contents!.count > 1 {
                 let contentModel1 = (model.contents! as NSArray).object(at: 1) as! WGTaDiscoverContentsItem
                 self.contentImageView?.contentLabel?.text = contentModel1.content
+            }else {
+                self.contentImageView?.contentLabel?.text = ""
+                self.contentImageView?.snp.remakeConstraints({ (make) in
+                    make.left.right.equalToSuperview()
+                    make.top.equalTo(self.authorView!.snp.bottom)
+                    make.height.equalTo(280)
+                })
             }
         }
         
+        if model.comments!.count > 0 {
+            self.comment0?.isHidden = false
+            self.comment1?.isHidden = false
+            let commentModel0 = (model.comments! as NSArray).object(at: 0) as! WGTaDiscoverCommentsItem
+            self.comment0?.headerImageV?.kf.setImage(with: URL.init(string: commentModel0.avaPath!))
+            self.comment0?.nameLabel?.text = commentModel0.nick!
+            self.comment0?.commentLabel?.text = commentModel0.content!
+            
+            self.comment0?.snp.remakeConstraints({ (make) in
+                make.left.right.equalToSuperview()
+                make.top.equalTo(self.contentImageView!.snp.bottom).offset(5)
+                make.height.equalTo(commentViewHeight)
+            })
         
-//        self.commentView
+            if model.comments!.count > 1 {
+                let commentModel1 = (model.comments! as NSArray).object(at: 1) as! WGTaDiscoverCommentsItem
+                self.comment1?.headerImageV?.kf.setImage(with: URL.init(string: commentModel1.avaPath!))
+                self.comment1?.nameLabel?.text = commentModel1.nick!
+                self.comment1?.commentLabel?.text = commentModel1.content!
+                
+                self.comment1?.snp.remakeConstraints({ (make) in
+                    make.left.right.equalToSuperview()
+                    make.top.equalTo(self.comment0!.snp.bottom)
+                    make.height.equalTo(commentViewHeight)
+                })
+            }else{
+                self.comment1?.isHidden = true
+            }
+        }else {
+            self.comment0?.isHidden = true
+            self.comment1?.isHidden = true
+        }
+        
         
         self.tipsView?.commentNumLabel?.text = "\(model.commentNum!)"
         self.tipsView?.favorNumLabel?.text = "\(model.favorNum!)"
         self.tipsView?.createAtLabel?.text = "\(model.createAt!)"
     }
+    
+    
+    class func getHeight(model : WGTaDiscoverDataModel) -> CGFloat {
+        
+        var height : CGFloat = 430
+        
+        if model.comments!.count > 1 {
+            height = height + 40
+        }else if model.comments!.count > 0 {
+            height = height + 20
+        }
+        if model.contents?.count == 1 {
+            height = height - 40
+        }
+        
+        return height
+    }
+    
+    
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -205,7 +280,10 @@ class WGTaDiscoverContentView: WGView {
         self.addSubview(self.contentLabel!)
         
         self.contentImageV?.snp.makeConstraints({ (make) in
-            make.edges.equalToSuperview().inset(UIEdgeInsets.init(top: 40, left: 15, bottom: 40, right: 15))
+            make.left.equalToSuperview().offset(15)
+            make.right.equalToSuperview().offset(-15)
+            make.top.equalToSuperview().offset(40)
+            make.height.equalTo(240)
         })
         
         self.postTitleLabel?.snp.makeConstraints({ (make) in
@@ -219,7 +297,6 @@ class WGTaDiscoverContentView: WGView {
             make.left.equalToSuperview().offset(15)
             make.right.equalTo(self).offset(-15)
             make.bottom.equalToSuperview()
-            make.top.equalTo(self.contentImageV!.snp.bottom)
         })
 
     }
@@ -312,13 +389,13 @@ class WGTaDiscoverCommentView: WGView {
         
         self.headerImageV = UIImageView.init(frame: CGRect.zero)
         self.headerImageV?.clipsToBounds = true
-        self.headerImageV?.layer.cornerRadius = 5
+        self.headerImageV?.layer.cornerRadius = 7.5
         self.headerImageV?.layer.borderWidth = 1
         self.headerImageV?.layer.borderColor = UIColor.gray.cgColor
         
-        self.nameLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.gray, font:UIFont.systemFont(ofSize: 12))
+        self.nameLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.gray, font:UIFont.systemFont(ofSize: 12), textAligent:.left)
         
-        self.commentLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.gray, font:UIFont.systemFont(ofSize: 12))
+        self.commentLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.gray, font:UIFont.systemFont(ofSize: 12), textAligent:.left)
         
         self.addSubview(self.headerImageV!)
         self.addSubview(self.nameLabel!)
@@ -328,7 +405,7 @@ class WGTaDiscoverCommentView: WGView {
             
             make.left.equalToSuperview().offset(15)
             make.centerY.equalToSuperview()
-            make.size.equalTo(CGSize.init(width: 10, height: 10))
+            make.size.equalTo(CGSize.init(width: 15, height: 15))
         })
         
         self.nameLabel?.snp.makeConstraints({ (make) in
@@ -336,11 +413,13 @@ class WGTaDiscoverCommentView: WGView {
             make.centerY.equalToSuperview()
         })
         
+        self.nameLabel?.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+ 
         self.commentLabel?.snp.makeConstraints({ (make) in
             make.left.equalTo(self.nameLabel!.snp.right).offset(5)
             make.centerY.equalToSuperview()
+            make.right.equalToSuperview().offset(-15)
         })
-        
  
     }
     

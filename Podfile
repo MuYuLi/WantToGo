@@ -12,7 +12,9 @@ target 'WantToGo' do
     pod 'HandyJSON'
     pod 'MYLCommonUI'
     pod 'CYLTabBarController', '~> 1.17.21'
-    
+    pod 'SVProgressHUD'
+    pod 'Toast', '~> 4.0.0'
+
    inhibit_all_warnings!
 
 end

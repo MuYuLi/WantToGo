@@ -45,7 +45,11 @@ class WGTaViewController: WGTableViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 430
+        if indexPath.row < self.discoverModelArray.count {
+            let discoverDataModel = self.discoverModelArray.object(at: indexPath.row) as! WGTaDiscoverDataModel
+            return  WGTaDiscoverCell.getHeight(model: discoverDataModel)
+        }
+        return 0
     }
     
     

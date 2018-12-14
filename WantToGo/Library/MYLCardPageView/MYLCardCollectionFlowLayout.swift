@@ -57,8 +57,8 @@ class MYLCardCollectionFlowLayout: UICollectionViewFlowLayout {
         super.prepare()
         self.sectionInset = UIEdgeInsets.init(top: 0, left: LEFT_OFFSET, bottom: 0, right: LEFT_OFFSET)
         self.itemSize = CGSize.init(width: kMainScreenWidth - LEFT_OFFSET*2, height: (SCREEN_WIDTH - LEFT_OFFSET*2)/0.618)
-        self.scrollDirection = UICollectionView.ScrollDirection(rawValue: 1)!
-        self.minimumLineSpacing = 15.0
+        self.scrollDirection = .horizontal
+        self.minimumLineSpacing = 15
         self.minimumInteritemSpacing = 10
     }
     
@@ -108,4 +108,9 @@ class MYLCardCollectionFlowLayout: UICollectionViewFlowLayout {
   
         return CGPoint.init(x: proposedContentOffset.x + CGFloat(offsetAdjustment), y: proposedContentOffset.y)
     }
+
+    
+    
+    
+    
 }

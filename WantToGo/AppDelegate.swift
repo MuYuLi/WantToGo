@@ -61,7 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func viewControllers() -> [UIViewController] {
         
         let theme = WGNavigationController(rootViewController: WGThemeViewController())
-        let desiner = WGNavigationController(rootViewController: WGDesignerViewController())
+        let designer = WGDesignerViewController()
+        designer.setStatusBarBackground(color: .clear)
+        let desiner = WGNavigationController(rootViewController: designer)
         let ta = WGNavigationController(rootViewController: WGTaViewController())
         let guang = WGNavigationController(rootViewController: WGGuangViewController())
         let mine = WGNavigationController(rootViewController: WGMineViewController())
