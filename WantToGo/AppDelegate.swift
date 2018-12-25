@@ -8,12 +8,14 @@
 
 import UIKit
 import CYLTabBarController
+import URLNavigator
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    let navigator = Navigator()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
   
@@ -28,9 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //tabbar字体颜色
         UITabBar.appearance().tintColor = KMainColor
         
+        self.configNavigator()
+        
         return true
     }
+    
+    func configNavigator() -> Void {
 
+        NavigatorMap.initialize(navigator: navigator)
+    }
+    
     func tabBarItemsAttributesForController() -> [[String : String]] {
         
         let tabBarItemTheme = [CYLTabBarItemTitle:"专题",
@@ -60,17 +69,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func viewControllers() -> [UIViewController] {
         
-        let theme = WGNavigationController(rootViewController: WGThemeViewController())
-        let designer = WGDesignerViewController()
+        let theme = WGNavigationController(rootViewController: WGThemeViewController(navigator:navigator))
+        let designer = WGDesignerViewController(navigator:navigator)
         designer.setStatusBarBackground(color: .clear)
         let desiner = WGNavigationController(rootViewController: designer)
-        let ta = WGNavigationController(rootViewController: WGTaViewController())
-        let guang = WGNavigationController(rootViewController: WGGuangViewController())
-        let mine = WGNavigationController(rootViewController: WGMineViewController())
+        let ta = WGNavigationController(rootViewController: WGTaViewController(navigator:navigator))
+        let guang = WGNavigationController(rootViewController: WGGuangViewController(navigator:navigator))
+        let mine = WGNavigationController(rootViewController: WGMineViewController(navigator:navigator))
         
         let viewControllers = [theme, desiner, ta, guang, mine]
         return viewControllers
     }
+    
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+
+        let urlStr = url.absoluteString
+    
+        self.navigator.push(urlStr)
+        
+        return true
+    }
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

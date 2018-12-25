@@ -8,18 +8,32 @@
 
 import UIKit
 import WebKit
+import URLNavigator
 
 class WGWebViewController: WGViewController {
-
+    
     var webView = WKWebView()
-    var urlString: NSString?
+    var urlString: String?
     var progBar : UIProgressView?
+    
+
+    // MARK: Initializing
+    init(navigator: NavigatorType, urlStr: String) {
+    
+        self.urlString = urlStr
+        super.init(navigator: navigator)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.hidesBottomBarWhenPushed = true
+
         self.loadWebView()
         self.loadProgress()
+
     }
     
     func loadWebView() -> Void {

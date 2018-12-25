@@ -203,7 +203,7 @@ class WGTaDiscoverAuthorView : WGView {
         
         self.authorTagLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.gray, font:UIFont.systemFont(ofSize: 12))
         
-        self.attentionButton = UIButton.creatButton(frame: CGRect.zero, target: self, action: #selector(self.attentionAction(_ : )), bgImage: UIImage.init(), tag: 101)
+        self.attentionButton = UIButton.creatButton(frame: CGRect.zero, target: self, action: #selector(self.attentionAction(_ : )), bgImage:nil)
         
         let lineV = UIView.init(frame: CGRect.zero)
         lineV.backgroundColor = KBackgroudColor

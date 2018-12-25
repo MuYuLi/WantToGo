@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import URLNavigator
 
 class WGViewController: UIViewController {
-
+    
+    public let navigator: NavigatorType
+    
+    public init(navigator : NavigatorType) {
+        
+        self.navigator = navigator
+        super.init(nibName:nil, bundle:nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hidesBottomBarWhenPushed = true
         self.view.backgroundColor = UIColor.white
     }
     

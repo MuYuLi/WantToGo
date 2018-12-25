@@ -18,6 +18,7 @@ class WGTaViewController: WGTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hidesBottomBarWhenPushed = false
         self.view.backgroundColor = KBackgroudColor
         self.tableView?.backgroundColor = KBackgroudColor
         self.loadData()

@@ -53,7 +53,7 @@ class WGDesignerViewController: WGTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        self.hidesBottomBarWhenPushed = false
         self.tableView?.frame = CGRect.init(x: 0, y: 0, width: kMainScreenWidth, height: kMainScreenHeight - CGFloat(TAB_BAR_HEIGHT))
         self.loadTagsData()
         self.loadRecommendData()

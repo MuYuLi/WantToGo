@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2711DEAB21CE349300C96E2F /* NavigatorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711DEAA21CE349300C96E2F /* NavigatorMap.swift */; };
 		2717676D21B4BDF500744DCD /* WGTaDiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717676C21B4BDF500744DCD /* WGTaDiscoverModel.swift */; };
 		2717677021B4C2DD00744DCD /* WGTaDiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */; };
 		2717677221B7689100744DCD /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717677121B7689000744DCD /* UIImage+Color.swift */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantToGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2711DEAA21CE349300C96E2F /* NavigatorMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorMap.swift; sourceTree = "<group>"; };
 		2717676C21B4BDF500744DCD /* WGTaDiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaDiscoverModel.swift; sourceTree = "<group>"; };
 		2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaDiscoverCell.swift; sourceTree = "<group>"; };
 		2717677121B7689000744DCD /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				2794392E21A930C50066E7F5 /* PrefixHeader.pch */,
 				2794392F21A931FF0066E7F5 /* Logic.swift */,
 				2797B08021ACEB6C00D47643 /* WGConstants.swift */,
+				2711DEAA21CE349300C96E2F /* NavigatorMap.swift */,
 				2794391921A6535B0066E7F5 /* Library */,
 				2794391821A6533E0066E7F5 /* Source */,
 				279438EA21A6509E0066E7F5 /* AppDelegate.swift */,
@@ -551,6 +554,7 @@
 		279438DF21A6509E0066E7F5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WG;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Muyuli;
@@ -635,6 +639,7 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
+				"${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -650,6 +655,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URLNavigator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -697,6 +703,7 @@
 				2794393321A940AB0066E7F5 /* MYLProgressHUD.swift in Sources */,
 				2797B0B221AFE5C600D47643 /* WGDesingerTagCell.swift in Sources */,
 				2794393021A931FF0066E7F5 /* Logic.swift in Sources */,
+				2711DEAB21CE349300C96E2F /* NavigatorMap.swift in Sources */,
 				2794392621A7D2EA0066E7F5 /* NSString+Extension.swift in Sources */,
 				2794391D21A657AA0066E7F5 /* WGViewController.swift in Sources */,
 				2797B0AE21AF952900D47643 /* WGDesignerHeaderView.swift in Sources */,
@@ -911,7 +918,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MYL.WantToGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MYL.WantToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -932,7 +939,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MYL.WantToGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MYL.WantToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

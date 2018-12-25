@@ -8,6 +8,8 @@
 
 import UIKit
 
+import URLNavigator
+
 class WGThemeSelectController: WGViewController {
     
     public var tagid : String?
@@ -16,13 +18,9 @@ class WGThemeSelectController: WGViewController {
         super.viewDidLoad()
 
         self.loadData()
-        
-        
-        
-        
     }
     
-
+    
     func loadData() -> Void {
         
         let dict = NSMutableDictionary()

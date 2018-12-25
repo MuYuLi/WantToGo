@@ -45,6 +45,7 @@ class WGGuangShoppingBannerCell: UITableViewCell,UICollectionViewDataSource,UICo
         self.shoppingBannerView = WGGuangShoppingBannerView.init(frame: CGRect.zero)
         self.contentView.addSubview(self.shoppingBannerView!)
         self.shoppingBannerView?.addTarget(self, action: #selector(self.selectShoppingBannerView(_ :)), for: .touchUpInside)
+
         self.shoppingBannerView?.snp.makeConstraints({ (make) in
             make.top.left.right.equalTo(self.contentView)
             make.height.equalTo(bannerViewHeight)
@@ -151,11 +152,7 @@ class WGGuangShoppingBannerCell: UITableViewCell,UICollectionViewDataSource,UICo
         return footerView
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-  
-        
-        
-        
-        
+
         
     }
     
@@ -244,15 +241,7 @@ class WGGuangShoppingBannerView: UIControl {
             make.bottom.equalTo(self.contentImageV!.snp.bottom).offset(1)
         })
         
-        self.addTarget(self, action: #selector(self.selectView(_ :)), for: .touchUpInside)
-        
-        
     }
-    
-    @objc func selectView(_ sender : UIButton) -> Void {
-        print("222345676543456765432")
-    }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

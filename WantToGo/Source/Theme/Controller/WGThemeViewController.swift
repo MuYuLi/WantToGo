@@ -22,10 +22,11 @@ class WGThemeViewController: WGViewController {
                 imgArray.add(homeTopicItem.imageMin!)
             }
             self.cardPageView?.imageNameArray = imgArray
-            self.showAnimationImageView = ThemeAnimationImageView.init(frame: CGRect.init(x: 100, y: 200, width: kMainScreenWidth - 200, height: kMainScreenHeight - 400))
-            self.showAnimationImageView?.kf.setImage(with: URL(string: (imgArray.object(at: 0) as! String)))
-            self.view.addSubview(self.showAnimationImageView!)
-            self.showAnimationImageView?.showAnimation()
+           
+//            self.showAnimationImageView = ThemeAnimationImageView.init(frame: CGRect.init(x: 100, y: 200, width: kMainScreenWidth - 200, height: kMainScreenHeight - 400))
+//            self.showAnimationImageView?.kf.setImage(with: URL(string: (imgArray.object(at: 0) as! String)))
+//            self.view.addSubview(self.showAnimationImageView!)
+//            self.showAnimationImageView?.showAnimation()
             
         }
     }
@@ -44,9 +45,9 @@ class WGThemeViewController: WGViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hidesBottomBarWhenPushed = false
         self.navigationItem.title = "专题"
-      
+        
         self.initMYLCardPageView()
         self.initTitleView()
         self.loadData()
@@ -93,14 +94,15 @@ class WGThemeViewController: WGViewController {
             
             let homeTopicItem = self.dataArray?.object(at: index) as! HomeTopicItem
             if homeTopicItem.url != nil && homeTopicItem.type == 1 {
-                
-                let webVC = WGWebViewController()
-                webVC.urlString = homeTopicItem.url
-                self.navigationController?.pushViewController(webVC, animated: true)
-                
+                let isPushed = self.navigator.push(homeTopicItem.url! as String) != nil
+                if isPushed {
+                    
+                } else {
+                    self.navigator.open(homeTopicItem.url! as String)
+                }
             }else{
+                self.navigator.push("wantgo://themeSelect")
                 
-               
             }
         }
     }

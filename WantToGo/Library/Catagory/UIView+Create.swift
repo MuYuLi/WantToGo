@@ -43,35 +43,33 @@ extension UILabel {
 
 extension UIButton {
     
-    class func creatButton(frame : CGRect, target : Any, action : Selector, title : String, font : UIFont, titleColor : UIColor, bgImage : UIImage, backColor : UIColor, tag : NSInteger) -> UIButton {
+    class func creatButton(frame : CGRect, target : Any, action : Selector, title : String, font : UIFont, titleColor : UIColor, bgImage : UIImage? = nil, backColor : UIColor) -> UIButton {
         let button = UIButton.init(type: .custom)
         button.frame = frame
         button.setTitle(title, for: .normal)
         button.addTarget(target, action: action, for: .touchUpInside)
-        
         button.titleLabel?.font = font
         button.setTitleColor(titleColor, for: .normal)
         
         button.setBackgroundImage(bgImage, for: .normal)
         
         button.backgroundColor = backColor
-        button.tag = tag
         return button
     }
     
-    class func creatButton(frame : CGRect, target : Any, action : Selector, title : String, font : UIFont, titleColor : UIColor, bgImage : UIImage, tag : NSInteger) -> UIButton {
+    class func creatButton(frame : CGRect, target : Any, action : Selector, title : String, font : UIFont, titleColor : UIColor, bgImage : UIImage? = nil) -> UIButton {
+        return self.creatButton(frame: frame, target: target, action: action, title: title, font: font, titleColor: titleColor, bgImage: bgImage, backColor: UIColor.clear)
+    }
+    
+    class func creatButton(frame : CGRect, target : Any, action : Selector, bgImage : UIImage? = nil) -> UIButton {
+        return self.creatButton(frame: frame, target: target, action: action, title: "", font: UIFont.systemFont(ofSize: 14), titleColor: UIColor.black, bgImage: bgImage, backColor: UIColor.clear)
+    }
+    
+    class func creatButton(frame : CGRect, target : Any, action : Selector, title : String, font : UIFont, titleColor : UIColor, backColor : UIColor) -> UIButton {
+        return self.creatButton(frame: frame, target: target, action: action, title: title, font: font, titleColor: titleColor, bgImage: nil, backColor: backColor)
+    }
+    class func creatButton(frame : CGRect, target : Any, action : Selector) -> UIButton {
         
-        return self.creatButton(frame: frame, target: target, action: action, title: title, font: font, titleColor: titleColor, bgImage: bgImage, backColor: UIColor.clear, tag: tag)
+        return self.creatButton(frame: frame, target: target, action: action, bgImage: nil)
     }
-    
-    
-    class func creatButton(frame : CGRect, target : Any, action : Selector, bgImage : UIImage, tag : NSInteger) -> UIButton {
-        
-        return self.creatButton(frame: frame, target: target, action: action, title: "", font: UIFont.systemFont(ofSize: 14), titleColor: UIColor.black, bgImage: bgImage, backColor: UIColor.clear, tag: tag)
-    }
-    
-    class func creatButton(frame : CGRect, target : Any, action : Selector, title : String, font : UIFont, titleColor : UIColor, backColor : UIColor, tag : NSInteger) -> UIButton {
-        return self.creatButton(frame: frame, target: target, action: action, title: title, font: font, titleColor: titleColor, bgImage: UIImage.init(named: "")!, backColor: backColor, tag: tag)
-    }
-
 }

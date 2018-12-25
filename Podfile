@@ -14,7 +14,7 @@ target 'WantToGo' do
     pod 'CYLTabBarController', '~> 1.17.21'
     pod 'SVProgressHUD'
     pod 'Toast', '~> 4.0.0'
-
+    pod 'URLNavigator'
    inhibit_all_warnings!
 
 end

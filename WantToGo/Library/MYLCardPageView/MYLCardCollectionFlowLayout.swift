@@ -109,8 +109,4 @@ class MYLCardCollectionFlowLayout: UICollectionViewFlowLayout {
         return CGPoint.init(x: proposedContentOffset.x + CGFloat(offsetAdjustment), y: proposedContentOffset.y)
     }
 
-    
-    
-    
-    
 }

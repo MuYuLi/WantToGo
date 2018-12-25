@@ -16,7 +16,6 @@ class WGTableViewController: WGViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTableView()
-        
     }
     
     func initTableView() -> Void {

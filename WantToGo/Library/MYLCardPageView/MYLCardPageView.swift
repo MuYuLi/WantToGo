@@ -20,8 +20,6 @@ class MYLCardPageView: UIView,UICollectionViewDelegateFlowLayout,UICollectionVie
     let ButtonHeight : CGFloat = 80
     let lastRow : NSInteger = 0
     
-    
-    
     var selectedIndex : NSInteger = 0
     
     

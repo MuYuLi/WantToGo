@@ -13,6 +13,7 @@ PODS:
   - SnapKit (4.0.1)
   - SVProgressHUD (2.2.5)
   - Toast (4.0.0)
+  - URLNavigator (2.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SVProgressHUD
   - Toast (~> 4.0.0)
+  - URLNavigator
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -37,6 +39,7 @@ SPEC REPOS:
     - SnapKit
     - SVProgressHUD
     - Toast
+    - URLNavigator
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -49,7 +52,8 @@ SPEC CHECKSUMS:
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  URLNavigator: e8cea3835b3456d7876eb728831e742273c8d209
 
-PODFILE CHECKSUM: 52c640aa10f6e9f2a28e53f875ae6e505cc5e72e
+PODFILE CHECKSUM: b9dc6d281d6a3f58ef7c55cd93957d225b6a98b8
 
 COCOAPODS: 1.5.3

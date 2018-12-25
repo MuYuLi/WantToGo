@@ -46,7 +46,7 @@ class WGGuangViewController: WGTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hidesBottomBarWhenPushed = false
         self.initTableView()
         //分类 数据
         self.loadCategoryData()
@@ -128,9 +128,12 @@ class WGGuangViewController: WGTableViewController {
     
     func pushWebViewController(url : NSString?) -> Void {
         
-        let webVC = WGWebViewController()
-        webVC.urlString = url
-        self.navigationController?.pushViewController(webVC, animated: true)
+
+        
+        
+//        let webVC = WGWebViewController()
+//        webVC.urlString = url
+//        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     
