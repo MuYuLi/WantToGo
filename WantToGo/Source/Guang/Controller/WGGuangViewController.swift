@@ -30,8 +30,9 @@ class WGGuangViewController: WGTableViewController {
                 self.headerView?.backgroundColor = UIColor.white
                 self.headerView?.dataArray = categoryDataArray
                 self.headerView?.frame.size.height = CGFloat((categoryDataArray!.count - 1 )/4) * itemWidth + itemWidth + 10
-                self.headerView?.selectItemBlock = {(index: NSInteger) -> Void in
-
+                self.headerView?.selectItemBlock = { [weak self] (index: NSInteger) -> Void in
+                    guard let strongSelf = self else {return}
+                    
                     
                     
                 }
@@ -78,20 +79,21 @@ class WGGuangViewController: WGTableViewController {
             let model = self.shoppingDataArray.object(at: indexPath.row) as! WGGuangShopingContentModel
 
             (cell as! WGGuangShoppingBannerCell).loadData(model: model)
-            (cell as! WGGuangShoppingBannerCell).scrollViewLoadMoreBlock = {() in
-
-                self.pushWebViewController(url: model.h5Url! as NSString)
+            (cell as! WGGuangShoppingBannerCell).scrollViewLoadMoreBlock = { [weak self] () in
+                guard let strongSelf = self else {return}
+                strongSelf.pushWebViewController(url: model.h5Url!)
             }
-
-            (cell as! WGGuangShoppingBannerCell).selectItemsBlock = {(_ type : SelectItemsType, _ index : NSInteger) in
+            
+            (cell as! WGGuangShoppingBannerCell).selectItemsBlock = { [weak self] (_ type : SelectItemsType, _ index : NSInteger) in
+                guard let strongSelf = self else {return}
                 if index < 0 && type == .SelectItemsType_shoppingBanner {
-
-                    self.pushWebViewController(url: model.h5Url! as NSString)
+                    
+                    strongSelf.pushWebViewController(url: model.h5Url!)
                 }else{
                     if index > 0 && index < model.items!.count {
-
+                        
                         let item = (model.items! as NSArray).object(at: index) as! WGGuangShopingItem
-
+                        
                         print(item.id!)
                     }
                 }
@@ -126,10 +128,9 @@ class WGGuangViewController: WGTableViewController {
 //
 
     
-    func pushWebViewController(url : NSString?) -> Void {
+    func pushWebViewController(url : String?) -> Void {
         
-
-        
+        self.navigator.push(url!)
         
 //        let webVC = WGWebViewController()
 //        webVC.urlString = url

@@ -9,10 +9,12 @@
 import UIKit
 import Kingfisher
 
-typealias SelectItemBlock = (_ index: NSInteger) -> Void
+typealias SelectItemBlock = (_ index: NSInteger, _ currentImageVFrame : CGRect) -> Void
 
 class MYLCardPageView: UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
 
+    var currentImageVFrame : CGRect?
+    
     var selectItemBlock : SelectItemBlock?
     
     let cellWidth : CGFloat = 300
@@ -79,12 +81,19 @@ class MYLCardPageView: UIView,UICollectionViewDelegateFlowLayout,UICollectionVie
         }else{
             cell.imageV?.image = UIImage.init(imageLiteralResourceName: self.imageNameArray.object(at: indexPath.row) as! String)
         }
+        if indexPath.row == 0 {
+            self.currentImageVFrame = cell.imageV?.frame
+        }
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! MYLCardCollectionCell
+        
+        self.currentImageVFrame = cell.imageV?.bounds
+        
         if self.selectItemBlock != nil {
-            self.selectItemBlock!(indexPath.row)
+            self.selectItemBlock!(indexPath.row,self.currentImageVFrame!)
         }
     }
 
@@ -128,3 +137,4 @@ class MYLCardPageView: UIView,UICollectionViewDelegateFlowLayout,UICollectionVie
     }
 
 }
+

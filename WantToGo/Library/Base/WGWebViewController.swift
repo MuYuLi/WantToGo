@@ -12,7 +12,7 @@ import URLNavigator
 
 class WGWebViewController: WGViewController {
     
-    var webView = WKWebView()
+    var webView : WKWebView!
     var urlString: String?
     var progBar : UIProgressView?
     
@@ -38,22 +38,27 @@ class WGWebViewController: WGViewController {
     
     func loadWebView() -> Void {
         //创建wkwebview
-        let webView = WKWebView(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        self.webView = WKWebView(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         //创建网址
         let url = NSURL(string: self.urlString! as String)
         //创建请求
         let request = NSURLRequest(url: url! as URL)
         //加载请求
-        webView.load(request as URLRequest)
+        self.webView.load(request as URLRequest)
         //添加wkwebview
-        self.view.addSubview(webView)
+        self.view.addSubview(self.webView)
+    }
+    
+    deinit {
+        self.webView = nil
+        self.progBar = nil
     }
     
     func loadProgress() -> Void {
         
-        self.progBar = UIProgressView(frame: CGRect.init(x: 0, y: kMainScreenHeight - CGFloat(STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT), width: self.view.frame.width, height: 30))
+        self.progBar = UIProgressView(frame: CGRect.init(x: 0, y: CGFloat(STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT), width: self.view.frame.width, height: 30))
         self.progBar?.progress = 0.0
-        self.progBar?.tintColor = UIColor.red
+        self.progBar?.tintColor = KMainColor
         self.webView.addSubview(self.progBar!)
         self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions.new, context: nil)
     }

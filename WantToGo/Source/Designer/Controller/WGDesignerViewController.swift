@@ -59,9 +59,10 @@ class WGDesignerViewController: WGTableViewController {
         self.loadRecommendData()
     
         self.sectionHeadV = WGDesingerSectionHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: kMainScreenWidth, height: 50))
-        self.sectionHeadV?.selectItemBlock = {(_ index:NSInteger) in
-            self.selectIndex = index
-            self.tableView?.reloadData()
+        self.sectionHeadV?.selectItemBlock = { [weak self] (_ index:NSInteger) in
+            guard let strongSelf = self else {return}
+            strongSelf.selectIndex = index
+            strongSelf.tableView?.reloadData()
         }
         
         self.statusBarView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kMainScreenWidth, height: CGFloat(STATUS_BAR_HEIGHT)))

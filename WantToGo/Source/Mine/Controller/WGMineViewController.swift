@@ -56,11 +56,15 @@ class WGMineViewController: WGViewController,UICollectionViewDelegateFlowLayout,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hidesBottomBarWhenPushed = false
         
 //        self.headerView = UICollectionReusableView.init(frame: CGRect.init(x: 0, y: 0, width: kMainScreenWidth, height: 200))
 //        let imageV = UIImageView.init(frame: self.headerView!.bounds)
 //        imageV.image = UIImage.init(named: "img_bg")
-        self.initCollectionView()
+
+        
+        
+//        self.initCollectionView()
         
     }
     
@@ -85,40 +89,25 @@ class WGMineViewController: WGViewController,UICollectionViewDelegateFlowLayout,
 
         self.collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "www")
     
-//        let header_y : CGFloat = 200;
 
-//        self.collectionView?.contentInset = UIEdgeInsets.init(top: header_y, left: 0, bottom: 0, right: 0)
 
-//        self.headerView?.frame = CGRect.init(x: 0, y: header_y, width: kMainScreenWidth, height: header_y)
-      
-//        self.collectionView?.addSubview(self.headerView!)
-//        self.collectionView!.contentOffset = CGPoint.init(x: 0, y: header_y)
-//
-        
-        
-        
-        
-        
         self.collectionView?.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         
         
-        
-        
-        
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerV = UICollectionReusableView()
-        if kind == UICollectionView.elementKindSectionHeader {
-            
-            let headerV = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! HeaderView
-            
-            return headerV
-        }
-        return headerV
-    }
-    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        let headerV = UICollectionReusableView()
+//        if kind == UICollectionView.elementKindSectionHeader {
+//
+//            let headerV = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! HeaderView
+//
+//            return headerV
+//        }
+//        return headerV
+//    }
+//
     
     
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {

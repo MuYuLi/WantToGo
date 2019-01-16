@@ -38,8 +38,15 @@ let KBackgroudColor = UIColor(r: 241, g: 241, b: 241)
 
 let grayColor = UIColor.gray
 let whiteColor = UIColor.white
-
-
+let grayLineColor = UIColorFromRGB(0xE5E5E5)
+public func UIColorFromRGB(_ rgbValue: UInt) -> UIColor {
+    return UIColor(
+        red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+        green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+        blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+        alpha: CGFloat(1.0)
+    )
+}
 func setFont(font : Int) -> UIFont{
     
     let font = UIFont.systemFont(ofSize: CGFloat(font))
@@ -50,3 +57,8 @@ let font13 = setFont(font: 13)
 let font14 = setFont(font: 14)
 let font15 = setFont(font: 15)
 let font16 = setFont(font: 16)
+
+let screenScale = kMainScreenWidth / 375
+public func WGFactory(_ num:CGFloat) -> CGFloat {
+    return num * screenScale
+}

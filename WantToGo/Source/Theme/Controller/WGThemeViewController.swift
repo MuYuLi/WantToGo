@@ -10,10 +10,10 @@ import UIKit
 
 class WGThemeViewController: WGViewController {
 
-    var showAnimationImageView : ThemeAnimationImageView?
+    var showAnimationImageView : UIImageView?
     
     var titleView : UIImageView?
-    
+    var themeSelectImageAnimationView : WGThemeSelectImageAnimationView?
     var cardPageView : MYLCardPageView?
     var dataArray : NSArray? {
         didSet{
@@ -22,12 +22,8 @@ class WGThemeViewController: WGViewController {
                 imgArray.add(homeTopicItem.imageMin!)
             }
             self.cardPageView?.imageNameArray = imgArray
-           
-//            self.showAnimationImageView = ThemeAnimationImageView.init(frame: CGRect.init(x: 100, y: 200, width: kMainScreenWidth - 200, height: kMainScreenHeight - 400))
-//            self.showAnimationImageView?.kf.setImage(with: URL(string: (imgArray.object(at: 0) as! String)))
-//            self.view.addSubview(self.showAnimationImageView!)
-//            self.showAnimationImageView?.showAnimation()
-            
+            let imageName = imgArray.firstObject as! String
+            self.doSelectImageAnimation(imageName)
         }
     }
     
@@ -54,6 +50,8 @@ class WGThemeViewController: WGViewController {
     
     }
     
+    //MARK: --------- Init
+   
     func initTitleView() -> Void {
         
         self.titleView = UIImageView.init(frame: CGRect.init(x: Int(kMainScreenWidth - 230) / 2 , y: STATUS_BAR_HEIGHT, width:230 , height: 30))
@@ -68,10 +66,14 @@ class WGThemeViewController: WGViewController {
         self.cardPageView = MYLCardPageView.init(frame: frame)
         self.view.addSubview(self.cardPageView!)
         self.cardPageView?.backgroundColor = UIColor.black
-        self.cardPageView?.selectItemBlock = {(index: NSInteger) -> Void in
-            self.selectPageItem(index: index)
+        self.cardPageView?.selectItemBlock = { [weak self] (index: NSInteger,currentImageVFrame : CGRect) -> Void in
+            guard let strongSelf = self else {return}
+            strongSelf.selectPageItem(index, currentImageVFrame)
         }
     }
+    
+    
+    //MARK: --------- NetWork
     
     func loadData() -> Void {
         
@@ -89,7 +91,9 @@ class WGThemeViewController: WGViewController {
         }
     }
     
-    func selectPageItem(index: NSInteger) -> Void {
+    //MARK: --------- Private Method
+    
+    func selectPageItem(_ index: NSInteger, _ contentImageVFrame : CGRect) -> Void {
         if index < (self.dataArray?.count)! {
             
             let homeTopicItem = self.dataArray?.object(at: index) as! HomeTopicItem
@@ -101,9 +105,40 @@ class WGThemeViewController: WGViewController {
                     self.navigator.open(homeTopicItem.url! as String)
                 }
             }else{
-                self.navigator.push("wantgo://themeSelect")
+                
+                self.themeSelectImageAnimationView = WGThemeSelectImageAnimationView.init(currentFrame: contentImageVFrame, resultsFrame: CGRect.init(x: 0, y: 0, width: kMainScreenWidth, height: kMainScreenHeight), imageName: homeTopicItem.imageMin!, parentViewController: self)
+                self.themeSelectImageAnimationView?.themeSelectImageView?.scrollviewToLastPageBlock = { [weak self] () -> Void in
+                    guard let strongSelf = self else { return }
+                    
+                    strongSelf.navigator.push(themeSelection, context: homeTopicItem)
+                    
+                    strongSelf.themeSelectImageAnimationView?.dismissAnimation()
+                    strongSelf.themeSelectImageAnimationView = nil
+                }
+                self.themeSelectImageAnimationView?.showEnlargeImageAnimation()
                 
             }
+        }
+    }
+    
+    func doSelectImageAnimation(_ imageName: String) -> Void {
+        
+        let currentFrame = CGRect.init(x: 0, y: 0, width: kMainScreenWidth, height: kMainScreenHeight)
+        let resultsFrame = CGRect.init(x: 30, y: CGFloat(STATUS_BAR_HEIGHT+NAV_BAR_HEIGHT), width: kMainScreenWidth - 60, height: (kMainScreenWidth - 60)/0.618)
+        
+        self.showAnimationImageView = UIImageView.init(frame: currentFrame)
+        self.showAnimationImageView?.kf.setImage(with: URL(string: imageName))
+        let rootVC = UIApplication.shared.delegate as! AppDelegate
+        rootVC.window?.addSubview(self.showAnimationImageView!)
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            self.showAnimationImageView?.frame = resultsFrame
+        }) { (true) in
+            
+            self.showAnimationImageView?.isHidden = true
+            
+            self.showAnimationImageView?.removeFromSuperview()
+            self.showAnimationImageView = nil
         }
     }
 }

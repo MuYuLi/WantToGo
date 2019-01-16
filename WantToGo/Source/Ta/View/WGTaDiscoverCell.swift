@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class WGTaDiscoverCell: UITableViewCell {
     
@@ -77,14 +78,21 @@ class WGTaDiscoverCell: UITableViewCell {
         if model.contents!.count > 0 {
             
             let contentModel = (model.contents! as NSArray).object(at: 0) as! WGTaDiscoverContentsItem
-            
-            self.contentImageView?.contentImageV?.kf.setImage(with: URL.init(string: contentModel.content!))
-            
-            if CGFloat(contentModel.imgHeight! - contentModel.imgWidth!) > 0 {
-                self.contentImageView?.contentImageV?.contentMode = .center
-            }else {
-                self.contentImageView?.contentImageV?.contentMode = .scaleToFill
+        
+            let downLoader = ImageDownloader.default
+            downLoader.downloadTimeout = 10
+            downLoader.downloadImage(with: URL.init(string: contentModel.content!)!, retrieveImageTask: nil, options: nil, progressBlock: nil) { [weak self] (image, error, imageUrl, originalData) in
+                guard let strongSelf = self else {return}
+                let finialImage = image?.scaled(newSize: CGSize.init(width: Int(kMainScreenWidth - 30), height: strongSelf.contentImageViewHeight))
+                strongSelf.contentImageView?.contentImageV?.image = finialImage
             }
+            
+//            self.contentImageView?.contentImageV?.kf.setImage(with: URL.init(string: contentModel.content!))
+//            if CGFloat(contentModel.imgHeight! - contentModel.imgWidth!) > 0 {
+//                self.contentImageView?.contentImageV?.contentMode = .center
+//            }else {
+//                self.contentImageView?.contentImageV?.contentMode = .scaleToFill
+//            }
             
             if model.contents!.count > 1 {
                 let contentModel1 = (model.contents! as NSArray).object(at: 1) as! WGTaDiscoverContentsItem

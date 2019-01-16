@@ -21,15 +21,15 @@ class HomeTopicModel: WGModel {
 class HomeTopicItem: HandyJSON {
     
     var flag : Bool?
-    var id : NSString?
-    var image : NSString?
-    var imageMin : NSString?
-    var imageType : NSString?
-    var keyword : NSString?
-    var name : NSString?
-    var tagid : NSString?
+    var id : String?
+    var image : String?
+    var imageMin : String?
+    var imageType : String?
+    var keyword :String?
+    var name : String?
+    var tagid : String?
     var type : NSNumber?
-    var url : NSString?
+    var url : String?
     required init() {
     }
 }

@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		2711DEAB21CE349300C96E2F /* NavigatorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711DEAA21CE349300C96E2F /* NavigatorMap.swift */; };
+		2714BB2A21EC344A0082159F /* MYLStackPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714BB2921EC344A0082159F /* MYLStackPageView.swift */; };
+		2714BB4421EC856D0082159F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2714BB3D21EC856C0082159F /* 1.jpg */; };
+		2714BB4521EC856D0082159F /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2714BB3E21EC856C0082159F /* 6.jpg */; };
+		2714BB4621EC856D0082159F /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2714BB3F21EC856C0082159F /* 3.jpg */; };
+		2714BB4721EC856D0082159F /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2714BB4021EC856D0082159F /* 5.jpg */; };
+		2714BB4821EC856D0082159F /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2714BB4121EC856D0082159F /* 4.jpg */; };
+		2714BB4921EC856D0082159F /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2714BB4221EC856D0082159F /* 7.jpg */; };
+		2714BB4A21EC856D0082159F /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2714BB4321EC856D0082159F /* 2.jpg */; };
+		2714BB4C21EDC5D90082159F /* WGThemeSelectImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714BB4B21EDC5D90082159F /* WGThemeSelectImageView.swift */; };
+		2714BB4E21EDCA290082159F /* WGThemeSelectImageAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714BB4D21EDCA290082159F /* WGThemeSelectImageAnimationView.swift */; };
+		2714BB5021EDDD8D0082159F /* WGThemeTopicSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714BB4F21EDDD8D0082159F /* WGThemeTopicSelectionController.swift */; };
+		2714BB5221EDDEDB0082159F /* WGNavigatorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714BB5121EDDEDB0082159F /* WGNavigatorScheme.swift */; };
 		2717676D21B4BDF500744DCD /* WGTaDiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717676C21B4BDF500744DCD /* WGTaDiscoverModel.swift */; };
 		2717677021B4C2DD00744DCD /* WGTaDiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */; };
 		2717677221B7689100744DCD /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717677121B7689000744DCD /* UIImage+Color.swift */; };
 		2717677521B7DA6300744DCD /* WGMineCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717677421B7DA6200744DCD /* WGMineCollectionViewFlowLayout.swift */; };
+		2780F4C221DF5BE000B442A7 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780F4C121DF5BE000B442A7 /* UIView+Frame.swift */; };
 		278776A421BB6629003DADCF /* WGToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278776A321BB6629003DADCF /* WGToast.swift */; };
-		278776A721BB6E67003DADCF /* ThemeAnimationImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278776A621BB6E67003DADCF /* ThemeAnimationImageView.swift */; };
 		279438EB21A6509E0066E7F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279438EA21A6509E0066E7F5 /* AppDelegate.swift */; };
 		279438F021A6509E0066E7F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279438EE21A6509E0066E7F5 /* Main.storyboard */; };
 		279438F221A650A20066E7F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279438F121A650A20066E7F5 /* Assets.xcassets */; };
@@ -42,7 +54,6 @@
 		2797B08921AD1DC800D47643 /* WGGuangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08821AD1DC800D47643 /* WGGuangViewController.swift */; };
 		2797B08B21AD1DD200D47643 /* WGTaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08A21AD1DD200D47643 /* WGTaViewController.swift */; };
 		2797B08D21AD1DDE00D47643 /* WGDesignerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B08C21AD1DDE00D47643 /* WGDesignerViewController.swift */; };
-		2797B09321AD331500D47643 /* WGThemeSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09221AD331500D47643 /* WGThemeSelectController.swift */; };
 		2797B09821AD4AE100D47643 /* WGViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09721AD4AE100D47643 /* WGViewModel.swift */; };
 		2797B09C21AD4CA700D47643 /* WGGuangCatrgoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09B21AD4CA700D47643 /* WGGuangCatrgoryModel.swift */; };
 		2797B09E21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B09D21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift */; };
@@ -78,12 +89,24 @@
 /* Begin PBXFileReference section */
 		180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantToGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2711DEAA21CE349300C96E2F /* NavigatorMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorMap.swift; sourceTree = "<group>"; };
+		2714BB2921EC344A0082159F /* MYLStackPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYLStackPageView.swift; sourceTree = "<group>"; };
+		2714BB3D21EC856C0082159F /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		2714BB3E21EC856C0082159F /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		2714BB3F21EC856C0082159F /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		2714BB4021EC856D0082159F /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		2714BB4121EC856D0082159F /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		2714BB4221EC856D0082159F /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		2714BB4321EC856D0082159F /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		2714BB4B21EDC5D90082159F /* WGThemeSelectImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGThemeSelectImageView.swift; sourceTree = "<group>"; };
+		2714BB4D21EDCA290082159F /* WGThemeSelectImageAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGThemeSelectImageAnimationView.swift; sourceTree = "<group>"; };
+		2714BB4F21EDDD8D0082159F /* WGThemeTopicSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGThemeTopicSelectionController.swift; sourceTree = "<group>"; };
+		2714BB5121EDDEDB0082159F /* WGNavigatorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGNavigatorScheme.swift; sourceTree = "<group>"; };
 		2717676C21B4BDF500744DCD /* WGTaDiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaDiscoverModel.swift; sourceTree = "<group>"; };
 		2717676F21B4C2DD00744DCD /* WGTaDiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaDiscoverCell.swift; sourceTree = "<group>"; };
 		2717677121B7689000744DCD /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		2717677421B7DA6200744DCD /* WGMineCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGMineCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		2780F4C121DF5BE000B442A7 /* UIView+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		278776A321BB6629003DADCF /* WGToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGToast.swift; sourceTree = "<group>"; };
-		278776A621BB6E67003DADCF /* ThemeAnimationImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeAnimationImageView.swift; sourceTree = "<group>"; };
 		279438E721A6509E0066E7F5 /* WantToGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantToGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		279438EA21A6509E0066E7F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		279438EF21A6509E0066E7F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,7 +142,6 @@
 		2797B08821AD1DC800D47643 /* WGGuangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangViewController.swift; sourceTree = "<group>"; };
 		2797B08A21AD1DD200D47643 /* WGTaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGTaViewController.swift; sourceTree = "<group>"; };
 		2797B08C21AD1DDE00D47643 /* WGDesignerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesignerViewController.swift; sourceTree = "<group>"; };
-		2797B09221AD331500D47643 /* WGThemeSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGThemeSelectController.swift; sourceTree = "<group>"; };
 		2797B09721AD4AE100D47643 /* WGViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGViewModel.swift; sourceTree = "<group>"; };
 		2797B09B21AD4CA700D47643 /* WGGuangCatrgoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangCatrgoryModel.swift; sourceTree = "<group>"; };
 		2797B09D21AD525700D47643 /* WGGuangCatrgoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGGuangCatrgoryHeaderView.swift; sourceTree = "<group>"; };
@@ -162,6 +184,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2710372D21E5D5F400E35525 /* pic */ = {
+			isa = PBXGroup;
+			children = (
+				2714BB3D21EC856C0082159F /* 1.jpg */,
+				2714BB4321EC856D0082159F /* 2.jpg */,
+				2714BB3F21EC856C0082159F /* 3.jpg */,
+				2714BB4121EC856D0082159F /* 4.jpg */,
+				2714BB4021EC856D0082159F /* 5.jpg */,
+				2714BB3E21EC856C0082159F /* 6.jpg */,
+				2714BB4221EC856D0082159F /* 7.jpg */,
+			);
+			path = pic;
+			sourceTree = "<group>";
+		};
+		2714BB2521E74C340082159F /* UICompents */ = {
+			isa = PBXGroup;
+			children = (
+				2714BB2621E74C420082159F /* StackPageView */,
+				2794391A21A657530066E7F5 /* MYLCardPageView */,
+			);
+			path = UICompents;
+			sourceTree = "<group>";
+		};
+		2714BB2621E74C420082159F /* StackPageView */ = {
+			isa = PBXGroup;
+			children = (
+				2714BB2921EC344A0082159F /* MYLStackPageView.swift */,
+			);
+			path = StackPageView;
+			sourceTree = "<group>";
+		};
 		2717676B21B4BD4700744DCD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +242,8 @@
 		278776A521BB6E46003DADCF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				278776A621BB6E67003DADCF /* ThemeAnimationImageView.swift */,
+				2714BB4B21EDC5D90082159F /* WGThemeSelectImageView.swift */,
+				2714BB4D21EDCA290082159F /* WGThemeSelectImageAnimationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +277,7 @@
 				2794392F21A931FF0066E7F5 /* Logic.swift */,
 				2797B08021ACEB6C00D47643 /* WGConstants.swift */,
 				2711DEAA21CE349300C96E2F /* NavigatorMap.swift */,
+				2714BB5121EDDEDB0082159F /* WGNavigatorScheme.swift */,
 				2794391921A6535B0066E7F5 /* Library */,
 				2794391821A6533E0066E7F5 /* Source */,
 				279438EA21A6509E0066E7F5 /* AppDelegate.swift */,
@@ -267,11 +322,11 @@
 		2794391921A6535B0066E7F5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				2714BB2521E74C340082159F /* UICompents */,
 				2794393121A9407D0066E7F5 /* HUD */,
 				2794392721A800D60066E7F5 /* Network */,
 				2794392421A7D2AE0066E7F5 /* Catagory */,
 				2794391B21A657790066E7F5 /* Base */,
-				2794391A21A657530066E7F5 /* MYLCardPageView */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -306,6 +361,7 @@
 				2794392521A7D2EA0066E7F5 /* NSString+Extension.swift */,
 				2794394021AAAA8A0066E7F5 /* UIColor+Extention.swift */,
 				2797B09F21AD534F00D47643 /* UIView+Create.swift */,
+				2780F4C121DF5BE000B442A7 /* UIView+Frame.swift */,
 				2717677121B7689000744DCD /* UIImage+Color.swift */,
 			);
 			path = Catagory;
@@ -351,8 +407,9 @@
 		2797B07F21AB85DE00D47643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2710372D21E5D5F400E35525 /* pic */,
 				2797B07D21AB85CB00D47643 /* WGThemeViewController.swift */,
-				2797B09221AD331500D47643 /* WGThemeSelectController.swift */,
+				2714BB4F21EDDD8D0082159F /* WGThemeTopicSelectionController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -597,9 +654,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2714BB4821EC856D0082159F /* 4.jpg in Resources */,
 				279438F521A650A20066E7F5 /* LaunchScreen.storyboard in Resources */,
+				2714BB4A21EC856D0082159F /* 2.jpg in Resources */,
+				2714BB4421EC856D0082159F /* 1.jpg in Resources */,
 				279438F221A650A20066E7F5 /* Assets.xcassets in Resources */,
+				2714BB4621EC856D0082159F /* 3.jpg in Resources */,
+				2714BB4721EC856D0082159F /* 5.jpg in Resources */,
+				2714BB4921EC856D0082159F /* 7.jpg in Resources */,
 				279438F021A6509E0066E7F5 /* Main.storyboard in Resources */,
+				2714BB4521EC856D0082159F /* 6.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,17 +755,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2714BB5221EDDEDB0082159F /* WGNavigatorScheme.swift in Sources */,
 				2794392B21A802170066E7F5 /* NetworkManager.swift in Sources */,
 				2797B08121ACEB6D00D47643 /* WGConstants.swift in Sources */,
 				2797B0A021AD534F00D47643 /* UIView+Create.swift in Sources */,
 				2797B0AA21AF844900D47643 /* WGDesignerTagsModel.swift in Sources */,
 				2794393921A958E60066E7F5 /* WGModel.swift in Sources */,
-				278776A721BB6E67003DADCF /* ThemeAnimationImageView.swift in Sources */,
 				2794391F21A657BA0066E7F5 /* WGView.swift in Sources */,
 				2797B0A821AF843400D47643 /* WGDesignerRecommendModel.swift in Sources */,
 				2794393721A9476E0066E7F5 /* HomeTopicModel.swift in Sources */,
 				2794393321A940AB0066E7F5 /* MYLProgressHUD.swift in Sources */,
 				2797B0B221AFE5C600D47643 /* WGDesingerTagCell.swift in Sources */,
+				2714BB5021EDDD8D0082159F /* WGThemeTopicSelectionController.swift in Sources */,
 				2794393021A931FF0066E7F5 /* Logic.swift in Sources */,
 				2711DEAB21CE349300C96E2F /* NavigatorMap.swift in Sources */,
 				2794392621A7D2EA0066E7F5 /* NSString+Extension.swift in Sources */,
@@ -715,7 +780,6 @@
 				2794393B21AA91C50066E7F5 /* WGWebViewController.swift in Sources */,
 				2717677221B7689100744DCD /* UIImage+Color.swift in Sources */,
 				2797B0AC21AF8FD900D47643 /* WGTableViewController.swift in Sources */,
-				2797B09321AD331500D47643 /* WGThemeSelectController.swift in Sources */,
 				2797B09821AD4AE100D47643 /* WGViewModel.swift in Sources */,
 				2797B0A421AE461300D47643 /* WGGuangShopingModel.swift in Sources */,
 				2794394121AAAA8A0066E7F5 /* UIColor+Extention.swift in Sources */,
@@ -723,6 +787,7 @@
 				2717677521B7DA6300744DCD /* WGMineCollectionViewFlowLayout.swift in Sources */,
 				2797B09C21AD4CA700D47643 /* WGGuangCatrgoryModel.swift in Sources */,
 				2794392D21A802620066E7F5 /* NetworkConfig.swift in Sources */,
+				2780F4C221DF5BE000B442A7 /* UIView+Frame.swift in Sources */,
 				2797B07E21AB85CB00D47643 /* WGThemeViewController.swift in Sources */,
 				2794392321A690350066E7F5 /* MYLCardCollectionFlowLayout.swift in Sources */,
 				278776A421BB6629003DADCF /* WGToast.swift in Sources */,
@@ -734,6 +799,9 @@
 				2797B08721AD1D2600D47643 /* WGMineViewController.swift in Sources */,
 				2797B08B21AD1DD200D47643 /* WGTaViewController.swift in Sources */,
 				2717677021B4C2DD00744DCD /* WGTaDiscoverCell.swift in Sources */,
+				2714BB2A21EC344A0082159F /* MYLStackPageView.swift in Sources */,
+				2714BB4C21EDC5D90082159F /* WGThemeSelectImageView.swift in Sources */,
+				2714BB4E21EDCA290082159F /* WGThemeSelectImageAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,24 +12,18 @@ import UIKit
 
 struct NavigatorMap {
     
-
     static func initialize(navigator: NavigatorType) {
         
-        navigator.register("wantgo://themeSelect") { url, values, context in
+        navigator.register(themeSelection) { url, values, context in
             
-            return WGThemeSelectController(navigator: navigator)
+            return WGThemeTopicSelectionController(navigator: navigator, context:context as? HomeTopicItem)
         }
 
         navigator.register("wantgo://webView") { url, values, context in
 
             guard let urlStr = values["urlStr"] as? String else { return nil }
-
-
             return WGWebViewController.init(navigator: navigator, urlStr: urlStr)
-
-//            return WGWebViewController.init(navigator: navigator, urlStr: urlStr)
         }
-
 
         navigator.register("http://<path:_>"){ url, values, context in
         
@@ -41,8 +35,6 @@ struct NavigatorMap {
             return self.webViewControllerFactory(navigator: navigator, url: url, values: values, context: context)
         }
         
-    
-//
 //        navigator.handle("navigator://alert", self.alert(navigator: navigator))
 //        navigator.handle("navigator://<path:_>") { (url, values, context) -> Bool in
 //            // No navigator match, do analytics or fallback function here
@@ -50,8 +42,6 @@ struct NavigatorMap {
 //            return true
 //        }
     }
-
-
     
     private static func webViewControllerFactory(navigator : NavigatorType,
         url: URLConvertible,
@@ -61,9 +51,6 @@ struct NavigatorMap {
         guard let url = url.urlValue else { return nil }
         return WGWebViewController.init(navigator: navigator, urlStr: url.urlStringValue)
     }
-    
-    
-    
 
     private static func alert(navigator: NavigatorType) -> URLOpenHandlerFactory {
         return { url, values, context in
@@ -75,9 +62,6 @@ struct NavigatorMap {
             return true
         }
     }
-
-
-
 }
 
 
