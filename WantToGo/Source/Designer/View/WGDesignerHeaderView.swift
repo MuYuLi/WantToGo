@@ -25,9 +25,6 @@ class WGDesignerHeaderView: UIControl {
         self.maskBackView?.backgroundColor = UIColor.black
         self.maskBackView?.alpha = 0.5
         
-//        contentImageV?.contentMode = .scaleAspectFill;
-//        contentImageV?.clipsToBounds = true
-        
         self.contentImageV = UIImageView.init(frame: CGRect.zero)
         self.titleLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.white, font: UIFont.systemFont(ofSize: 16))
         self.cutLine = UIView.init(frame: CGRect.zero)

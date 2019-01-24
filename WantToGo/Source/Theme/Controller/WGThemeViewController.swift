@@ -31,6 +31,8 @@ class WGThemeViewController: WGViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         super.viewWillAppear(animated)
+//        self.navigationController?.navigationBar.barStyle = .black
+        self.statusBarStyle = .default
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,11 +45,11 @@ class WGThemeViewController: WGViewController {
         super.viewDidLoad()
         self.hidesBottomBarWhenPushed = false
         self.navigationItem.title = "专题"
-        
+    
         self.initMYLCardPageView()
         self.initTitleView()
         self.loadData()
-    
+        
     }
     
     //MARK: --------- Init

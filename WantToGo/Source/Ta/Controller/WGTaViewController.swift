@@ -16,9 +16,11 @@ class WGTaViewController: WGTableViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hidesBottomBarWhenPushed = false
+        self.navigationItem.title = "发现"
         self.view.backgroundColor = KBackgroudColor
         self.tableView?.backgroundColor = KBackgroudColor
         self.loadData()

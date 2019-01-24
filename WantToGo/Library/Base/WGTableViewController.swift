@@ -16,6 +16,11 @@ class WGTableViewController: WGViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTableView()
+        if #available(iOS 11.0, *) {
+            self.tableView?.contentInsetAdjustmentBehavior = .never
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
     }
     
     func initTableView() -> Void {
@@ -24,6 +29,11 @@ class WGTableViewController: WGViewController,UITableViewDelegate,UITableViewDat
         self.tableView?.separatorStyle = .none
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
+        self.tableView?.keyboardDismissMode = .onDrag
+        self.tableView?.estimatedRowHeight = 0;
+        self.tableView?.estimatedSectionHeaderHeight = 0;
+        self.tableView?.estimatedSectionFooterHeight = 0;
+        self.tableView?.tableFooterView = UIView()
         self.view.addSubview(self.tableView!)
     }
     

@@ -12,6 +12,20 @@ class WGGuangViewController: WGTableViewController {
 
     var headerView : WGGuangCatrgoryHeaderView?
     
+    lazy var nav: UIView = { [weak self] in
+        
+        let textField = WGSearchTextField.init(frame: CGRect.init(x: 0, y: 0, width: kMainScreenWidth - 65, height: 35))
+        textField.leftImageName = "icn_search_small"
+        textField.rightImageName = "btn_qrcode"
+        textField.placeholdString = "搜索好设计"
+        textField.textColor = grayLineColor
+        textField.textFont = font14
+        textField.backgroundColor = .white
+        
+        return textField
+        
+        }()
+    
     //content shopping数据源
     var shoppingDataArray = NSArray() {
         
@@ -45,10 +59,21 @@ class WGGuangViewController: WGTableViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.nav.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.nav.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hidesBottomBarWhenPushed = false
-        self.initTableView()
+        self.initNavigationBar()
+        
         //分类 数据
         self.loadCategoryData()
         //购物 数据
@@ -59,6 +84,21 @@ class WGGuangViewController: WGTableViewController {
         self.loadLovesData()
         
     }
+    
+    func initNavigationBar() -> Void {
+        
+        self.navigationController?.navigationBar.addSubview(self.nav)
+        
+        self.nav.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(15)
+            make.centerY.equalToSuperview()
+            make.height.equalTo(35)
+            make.right.equalToSuperview().offset(-50)
+        }
+
+        self.setNavigatonRightItem("icn_msg_white")
+    }
+    
 
     //MARK: --------- UITableViewDelegate,UITableViewDataSource
     
@@ -136,7 +176,6 @@ class WGGuangViewController: WGTableViewController {
 //        webVC.urlString = url
 //        self.navigationController?.pushViewController(webVC, animated: true)
     }
-    
     
     
     //MARK: --------- NetWork Data
