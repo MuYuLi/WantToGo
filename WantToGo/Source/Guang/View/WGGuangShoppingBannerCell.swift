@@ -9,8 +9,8 @@
 import UIKit
 
 enum SelectItemsType {
-    case SelectItemsType_shoppingBanner
-    case SelectItemsType_items
+    case banner
+    case item
 }
 
 typealias ScrollViewLoadMoreBlock = () -> Void
@@ -44,12 +44,13 @@ class WGGuangShoppingBannerCell: UITableViewCell,UICollectionViewDataSource,UICo
         
         self.shoppingBannerView = WGGuangShoppingBannerView.init(frame: CGRect.zero)
         self.contentView.addSubview(self.shoppingBannerView!)
-        self.shoppingBannerView?.addTarget(self, action: #selector(self.selectShoppingBannerView(_ :)), for: .touchUpInside)
-
+  
         self.shoppingBannerView?.snp.makeConstraints({ (make) in
             make.top.left.right.equalTo(self.contentView)
             make.height.equalTo(bannerViewHeight)
         })
+        
+        self.shoppingBannerView?.maskV?.addTarget(self, action: #selector(self.selectShoppingBannerView(_ :)), for: .touchUpInside)
         
         self.initCollectionView()
     }
@@ -81,15 +82,10 @@ class WGGuangShoppingBannerCell: UITableViewCell,UICollectionViewDataSource,UICo
     
     @objc func selectShoppingBannerView(_ sender : UIControl) -> Void {
         if self.selectItemsBlock != nil {
-            self.selectItemsBlock!(.SelectItemsType_shoppingBanner,-1)
+            self.selectItemsBlock!(.banner,-1)
         }
     }
     
-    func removeItemViews() -> Void {
-        for view : UIView in self.itemsSupView!.subviews {
-            view.removeFromSuperview()
-        }
-    }
     
     public func loadData(model : WGGuangShopingContentModel) -> Void {
         
@@ -153,7 +149,9 @@ class WGGuangShoppingBannerCell: UITableViewCell,UICollectionViewDataSource,UICo
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        
+        if self.selectItemsBlock != nil {
+            self.selectItemsBlock!(.item,indexPath.row)
+        }
     }
     
     
@@ -176,12 +174,13 @@ class WGGuangShoppingBannerView: UIControl {
     var nameLabel : UILabel?
     var allButton : UIButton?
     var arrowsImageV : UIImageView?
-    
+    var maskV : UIControl?
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let maskView = UIView()
-        maskView.backgroundColor = UIColor.black
-        maskView.alpha = 0.5
+        self.maskV = UIControl()
+        self.maskV?.backgroundColor = UIColor.black
+        self.maskV?.alpha = 0.5
+        
         self.contentImageV = UIImageView.init(frame: CGRect.zero)
         self.contentImageV?.isUserInteractionEnabled = true
         self.titleLabel = UILabel.createLabel(frame: CGRect.zero, text: "", textColor: UIColor.white, font: UIFont.systemFont(ofSize: 18))
@@ -196,12 +195,11 @@ class WGGuangShoppingBannerView: UIControl {
         self.allButton?.layer.cornerRadius = 2
         self.allButton?.layer.borderWidth = 1
         self.allButton?.layer.borderColor = UIColor.white.cgColor
-        
         self.arrowsImageV = UIImageView.init(frame: CGRect.zero)
         self.arrowsImageV?.image = UIImage.init(named: "guangContentArrow")
         
         self.addSubview(self.contentImageV!)
-        self.addSubview(maskView)
+        self.addSubview(self.maskV!)
         self.addSubview(self.titleLabel!)
         self.addSubview(self.cutLine!)
         self.addSubview(self.nameLabel!)
@@ -212,7 +210,7 @@ class WGGuangShoppingBannerView: UIControl {
             make.edges.equalTo(self)
         })
         
-        maskView.snp.makeConstraints { (make) in
+        self.maskV?.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentImageV!)
         }
         
@@ -240,9 +238,8 @@ class WGGuangShoppingBannerView: UIControl {
             make.centerX.equalTo(self.contentImageV!)
             make.bottom.equalTo(self.contentImageV!.snp.bottom).offset(1)
         })
-        
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

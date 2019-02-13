@@ -124,6 +124,16 @@ class WGDesignerViewController: WGTableViewController {
                     rightTagsItem = tagArray.object(at: indexPath.row*2+1) as? WGDesignerTagsItem
                 }
                 (cell as! WGDesingerTagCell).loadUI(leftModel: leftTagsItem!, rightModel: rightTagsItem!)
+                (cell as! WGDesingerTagCell).selectTagItemBlock = {[weak self] (index: NSInteger) -> Void in
+                    guard let strongSelf = self else {return}
+                    var tagId = leftTagsItem?.id
+                    var tagName : String = leftTagsItem?.name ?? ""
+                    if index == 1{
+                        tagId = rightTagsItem?.id
+                        tagName = rightTagsItem?.name ?? ""
+                    }
+                    strongSelf.navigator.push(designerTagList+"/"+"\(tagId!)"+"/"+tagName)
+                }
             }
         }
         return cell!

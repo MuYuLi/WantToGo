@@ -81,7 +81,7 @@ class WGMineViewController: WGTableViewController{
         case 1:
             return 44
         default:
-            return 15
+            return 10
         }
     }
 
@@ -147,7 +147,6 @@ class WGMineViewController: WGTableViewController{
         
         let yOffset : CGFloat = scrollView.contentOffset.y
         print(yOffset)
-        
      
         let height = CGFloat(STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT)
         

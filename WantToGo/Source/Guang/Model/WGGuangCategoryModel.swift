@@ -9,7 +9,7 @@
 import UIKit
 import HandyJSON
 
-class WGGuangCatrgoryModel: WGModel {
+class WGGuangCategoryModel: WGModel {
 
     
     var data : Array<WGGuangCatrgoryItem>?

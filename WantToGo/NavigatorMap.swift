@@ -19,6 +19,34 @@ struct NavigatorMap {
             return WGThemeTopicSelectionController(navigator: navigator, context:context as? HomeTopicItem)
         }
 
+        navigator.register(commodityDetail+"/<commodityid>"){ url, values, context in
+            
+            guard let commodityid = values["commodityid"] as? String else { return nil }
+            return WGCommodityDetailController(navigator: navigator, commodityid: commodityid)
+        }
+        
+        navigator.register(guangCategory+"/<categoryid>"+"/<categoryname>"){ url, values, context in
+            
+            guard let commodityid = values["categoryid"] as? String else { return nil }
+            guard let categoryname = values["categoryname"] as? String else { return nil }
+           
+            return WGGuangCategoryController(navigator: navigator, categoryid: commodityid, categoryname: categoryname)
+        }
+        
+        navigator.register(taDetail+"/<postid>"){ url, values, context in
+            
+            guard let postid = values["postid"] as? String else { return nil }
+            
+            return WGTaDetailViewController(navigator: navigator, postid: postid)
+        }
+        
+        navigator.register(designerTagList+"/<tagid>"+"/<tagname>"){ url, values, context in
+            
+            guard let tagid = values["tagid"] as? String else { return nil }
+            guard let tagname = values["tagname"] as? String else { return nil }
+            return WGDesignerTagListController(navigator: navigator, tagid: tagid, tagname: tagname)
+        }
+        
         navigator.register("wantgo://webView") { url, values, context in
 
             guard let urlStr = values["urlStr"] as? String else { return nil }
@@ -34,6 +62,9 @@ struct NavigatorMap {
             
             return self.webViewControllerFactory(navigator: navigator, url: url, values: values, context: context)
         }
+     
+   
+        
         
 //        navigator.handle("navigator://alert", self.alert(navigator: navigator))
 //        navigator.handle("navigator://<path:_>") { (url, values, context) -> Bool in

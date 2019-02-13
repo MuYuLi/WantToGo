@@ -47,7 +47,9 @@ class WGGuangViewController: WGTableViewController {
                 self.headerView?.selectItemBlock = { [weak self] (index: NSInteger) -> Void in
                     guard let strongSelf = self else {return}
                     
+                    let item = strongSelf.headerView!.dataArray![index] as! WGGuangCatrgoryItem
                     
+                    strongSelf.navigator.push(guangCategory+"/"+"\(item.id!)"+"/"+"\(item.name!)")
                     
                 }
                 self.tableView?.tableHeaderView = self.headerView
@@ -122,19 +124,20 @@ class WGGuangViewController: WGTableViewController {
             (cell as! WGGuangShoppingBannerCell).scrollViewLoadMoreBlock = { [weak self] () in
                 guard let strongSelf = self else {return}
                 strongSelf.pushWebViewController(url: model.h5Url!)
+                strongSelf.tableView?.reloadData()
             }
             
             (cell as! WGGuangShoppingBannerCell).selectItemsBlock = { [weak self] (_ type : SelectItemsType, _ index : NSInteger) in
                 guard let strongSelf = self else {return}
-                if index < 0 && type == .SelectItemsType_shoppingBanner {
+                if index < 0 && type == .banner {
                     
                     strongSelf.pushWebViewController(url: model.h5Url!)
                 }else{
-                    if index > 0 && index < model.items!.count {
+                    if index < model.items!.count {
                         
-                        let item = (model.items! as NSArray).object(at: index) as! WGGuangShopingItem
+                        let item = model.items?[index]
                         
-                        print(item.id!)
+                        strongSelf.navigator.push(commodityDetail+"/"+"\(item!.id!)")
                     }
                 }
             }
@@ -184,7 +187,7 @@ class WGGuangViewController: WGTableViewController {
         
         NetworkRequest(.guangCategoryApi(Dict: [:])) { (response) -> (Void) in
             
-            if let categoryModel = WGGuangCatrgoryModel.deserialize(from: response){
+            if let categoryModel = WGGuangCategoryModel.deserialize(from: response){
                 if categoryModel.code == SuccessCode {
                     self.categoryDataArray = categoryModel.data! as NSArray
                 }
@@ -221,11 +224,7 @@ class WGGuangViewController: WGTableViewController {
         
         NetworkRequest(.guangLovesApi(Dict: dict as! [String : Any])) { (response) -> (Void) in
             
-            
-            
-            
-            
-            
+   
         }
     }
      

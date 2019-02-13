@@ -56,6 +56,15 @@ class WGTaViewController: WGTableViewController {
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        let discoverDataModel = self.discoverModelArray.object(at: indexPath.row) as! WGTaDiscoverDataModel
+        
+        self.navigator.push(taDetail+"/"+"\(discoverDataModel.id!)")
+    }
+    
+    
     func loadData() -> Void {
      
         let dict = NSMutableDictionary()

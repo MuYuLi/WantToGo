@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension NSString {
     
@@ -55,4 +56,37 @@ extension NSString {
         }
     }
     
+}
+
+extension String {
+    
+    
+    func wg_heightForComment(_ fontSize: UIFont, _ width: CGFloat, _ LineSpacing: CGFloat) -> CGFloat {
+        let font = fontSize
+        //通过富文本来设置行间距
+        let paraph = NSMutableParagraphStyle()
+        //设置行间距
+        paraph.lineSpacing = LineSpacing
+
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font,NSAttributedString.Key.paragraphStyle: paraph], context: nil)
+        return ceil(rect.height)
+    }
+    
+    func wg_widthForComment(_ fontSize: UIFont, _ height: CGFloat = 15) -> CGFloat {
+        let font = fontSize
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return ceil(rect.width)
+    }
+    
+    func wg_heightForComment(_ fontSize: UIFont, _ width: CGFloat) -> CGFloat {
+        let font = fontSize
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return ceil(rect.height)
+    }
+    
+    func wg_heightForComment(_ fontSize: UIFont, _ width: CGFloat, maxHeight: CGFloat) -> CGFloat {
+        let font = fontSize
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return ceil(rect.height)>maxHeight ? maxHeight : ceil(rect.height)
+    }
 }

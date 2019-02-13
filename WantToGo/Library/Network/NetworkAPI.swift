@@ -21,15 +21,22 @@ enum NetworkAPI {
     case guangShoppingBannerApi(Dict:[String:Any])//购物
     case guangChoiceApi(Dict:[String:Any])//精选
     case guangLovesApi(Dict:[String:Any])//大家喜欢
+    case guangCategoryListApi(Dict:[String:Any])//大家喜欢
+    
+    
     
     //Designer
     case designerRecommendApi(Dict:[String:Any])//头部推荐
     case designerTagsApi(Dict:[String:Any])//tag
+    case designerTagsListApi(Dict:[String:Any])//tag list
+    
 
     //TA
     case taDiscoverApi(Dict:[String:Any])//发现
     
-    
+    case taDetailContentApi(Dict:[String:Any])//TA detail content
+    case taDetailConmentApi(Dict:[String:Any])//TA detail 评论
+    case taDetailFavorsApi(Dict:[String:Any])//TA detail 喜欢
     
     case testApiDict(Dict:[String:Any])//把参数包装成字典传入
     case testApi
@@ -74,6 +81,8 @@ extension NetworkAPI : TargetType {
             return .requestParameters(parameters: dict, encoding: URLEncoding.default)
         case let .guangLovesApi(dict)://大家喜欢c
             return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+        case let .guangCategoryListApi(dict)://分类列表
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
           
             
         //Designer
@@ -81,10 +90,21 @@ extension NetworkAPI : TargetType {
             return .requestParameters(parameters: dict, encoding: URLEncoding.default)
         case let .designerTagsApi(dict)://
             return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+        case let .designerTagsListApi(dict)://
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+        
             
         //TA
         case let .taDiscoverApi(dict):
             return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+            
+        case let .taDetailContentApi(dict):
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+        case let .taDetailConmentApi(dict):
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+        case let .taDetailFavorsApi(dict):
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+            
             
         case .testApi:
             return .requestPlain
@@ -121,16 +141,28 @@ extension NetworkAPI : TargetType {
             return "search/list"
         case .guangLovesApi://大家喜欢c
             return "ios/allfaver"
+        case .guangCategoryListApi://分类list
+            return "search/list"
             
         //Designer
         case .designerRecommendApi://头部推荐
             return "designer2/tag/index"
         case .designerTagsApi://tags
             return "designer2/recommend/operate"
+        case .designerTagsListApi://tags list
+            return "designer2/list"
+            
+            
             
         //TA
         case .taDiscoverApi://发现
             return "post/recommends"
+        case .taDetailContentApi:
+            return "post/detail"
+        case .taDetailConmentApi:
+            return "action/comment/list"
+        case .taDetailFavorsApi:
+            return "post/favors"
             
             
             

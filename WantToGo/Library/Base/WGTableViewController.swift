@@ -7,25 +7,30 @@
 //
 
 import UIKit
+import URLNavigator
 
 class WGTableViewController: WGViewController,UITableViewDelegate,UITableViewDataSource {
-
+    
     var tableView : UITableView?
     var numberOfRow : NSInteger = 0
+    public var style : NSInteger = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initTableView()
+       
         if #available(iOS 11.0, *) {
             self.tableView?.contentInsetAdjustmentBehavior = .never
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
+        
+        self.initTableView()
+     
     }
     
     func initTableView() -> Void {
         
-        self.tableView = UITableView.init(frame: CGRect.init(x: 0, y: CGFloat(STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT), width: kMainScreenWidth, height: IPHONE_CONTENT_HEIGHT), style: .plain)
+        self.tableView = UITableView.init(frame: CGRect.init(x: 0, y: CGFloat(STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT), width: kMainScreenWidth, height: IPHONE_CONTENT_HEIGHT), style: UITableView.Style(rawValue: style) ?? .plain)
         self.tableView?.separatorStyle = .none
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
