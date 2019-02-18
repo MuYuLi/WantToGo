@@ -9,9 +9,8 @@
 import UIKit
 import URLNavigator
 
-class WGThemeTopicSelectionController: WGViewController {
-    public var tagid : String?
-    
+class WGThemeTopicSelectionController: WGGuangCategoryController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "专题精选"
@@ -21,9 +20,7 @@ class WGThemeTopicSelectionController: WGViewController {
     
     init(navigator: NavigatorType, context : HomeTopicItem?) {
         
-        super.init(navigator: navigator)
-        self.tagid = context?.id
-        
+        super.init(navigator: navigator, categoryid: context?.id ?? "", categoryname: "精选")
     }
     
     required init?(coder aDecoder: NSCoder) {
