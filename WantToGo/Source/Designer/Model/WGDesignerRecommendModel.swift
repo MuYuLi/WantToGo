@@ -50,3 +50,10 @@ class WGDesignerRecommendTagsModel: HandyJSON {
     }
 }
 
+
+struct Modelllll {
+    var categoryId : String?
+  
+    var name : String?
+   
+}

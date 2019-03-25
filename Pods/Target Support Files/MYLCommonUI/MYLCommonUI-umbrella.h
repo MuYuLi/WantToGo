@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "MYLCustomAlertManage.h"
+#import "UIView+AF.h"
 #import "UIView+Create.h"
 
 FOUNDATION_EXPORT double MYLCommonUIVersionNumber;

@@ -15,6 +15,8 @@ target 'WantToGo' do
     pod 'SVProgressHUD'
     pod 'Toast', '~> 4.0.0'
     pod 'URLNavigator'
+    pod 'SwiftLint'
+
    inhibit_all_warnings!
 
 end
