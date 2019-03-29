@@ -8,7 +8,12 @@ PODS:
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - MYLCommonUI (0.0.7)
+  - MYLCommonUI (0.0.11):
+    - MYLCommonUI/Components (= 0.0.11)
+    - MYLCommonUI/Utils (= 0.0.11)
+  - MYLCommonUI/Components (0.0.11):
+    - MYLCommonUI/Utils
+  - MYLCommonUI/Utils (0.0.11)
   - Result (3.2.4)
   - SnapKit (4.0.1)
   - SVProgressHUD (2.2.5)
@@ -22,7 +27,7 @@ DEPENDENCIES:
   - HandyJSON
   - Kingfisher (~> 4.10.1)
   - Moya (~> 11.0)
-  - MYLCommonUI
+  - MYLCommonUI (~> 0.0.11)
   - SnapKit (~> 4.0.0)
   - SVProgressHUD
   - SwiftLint
@@ -50,7 +55,7 @@ SPEC CHECKSUMS:
   HandyJSON: d0c5fc80204f29056d59d3e5c4587fa0b16b60a8
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Moya: a725035953bc1c0eb1be505ab903984501d82440
-  MYLCommonUI: f5dd6a249a11004c1b545d98a7ac1cedb8f27587
+  MYLCommonUI: 265616958852baeaf497e4ad6f1413d6c24a30c8
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
@@ -58,6 +63,6 @@ SPEC CHECKSUMS:
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   URLNavigator: e8cea3835b3456d7876eb728831e742273c8d209
 
-PODFILE CHECKSUM: 78c2c5eb284d51d616cb9f9bfe62912240f54b7d
+PODFILE CHECKSUM: 9137f884e4b454c3fcbde143c23608e171aef066
 
 COCOAPODS: 1.5.3

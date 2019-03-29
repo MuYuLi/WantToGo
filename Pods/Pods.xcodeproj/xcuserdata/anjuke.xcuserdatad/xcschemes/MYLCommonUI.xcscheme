@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "41E2BC35F0FB2C12240B8DD2F6E575AF"
+               BlueprintIdentifier = "FB1C43DD393E6806899F8A924A3BA36B"
                BlueprintName = "MYLCommonUI"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "MYLCommonUI.framework">
