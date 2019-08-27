@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8CDC8BD89E28AE3001DE99CE01647594"
+               BlueprintIdentifier = "8534B493C62D81C69516B0E9599CEF36"
+               BuildableName = "CYLTabBarController.framework"
                BlueprintName = "CYLTabBarController"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "CYLTabBarController.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "12FFA317-E3AA-423C-B59E-548630400CDC"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3603AD1C-7F22-423C-9D6F-018F85DECC78"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WantToGo/Source/Theme/Controller/WGThemeViewController.swift"
-            timestampString = "571633971.7897969"
+            timestampString = "578801213.0011311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -22,6 +24,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D67E69E6-1459-4166-AE7A-9DEAC48276DF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -38,6 +41,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D6C886DB-D7C2-4E9F-89B1-E2CD0A372401"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -54,6 +58,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9C3E3BB7-0FBA-46A4-B1ED-3F1EED865225"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -64,6 +69,23 @@
             startingLineNumber = "85"
             endingLineNumber = "85"
             landmarkName = "loadTagListData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31A193EB-B0FE-420F-8021-ECE11F07A0EC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WantToGo/Source/Guang/Controller/WGGuangViewController.swift"
+            timestampString = "578801262.149295"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "loadShoppingBannerData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

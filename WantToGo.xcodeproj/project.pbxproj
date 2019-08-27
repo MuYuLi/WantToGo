@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,12 +20,6 @@
 		270EAC212213F87700CED97B /* WGDesignerTagListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EAC202213F87700CED97B /* WGDesignerTagListController.swift */; };
 		270EAC23221400A800CED97B /* WGDesignerTagListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EAC22221400A800CED97B /* WGDesignerTagListModel.swift */; };
 		270EAC252214041800CED97B /* WGDesignerTagListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EAC242214041800CED97B /* WGDesignerTagListCell.swift */; };
-		270EAC34221A48AB00CED97B /* ALogFileSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270EAC2A221A48AA00CED97B /* ALogFileSystem.cpp */; };
-		270EAC35221A48AB00CED97B /* log_buffer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 270EAC2B221A48AA00CED97B /* log_buffer.cc */; };
-		270EAC36221A48AB00CED97B /* formater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270EAC2E221A48AA00CED97B /* formater.cpp */; };
-		270EAC37221A48AB00CED97B /* autobuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270EAC30221A48AA00CED97B /* autobuffer.cpp */; };
-		270EAC38221A48AB00CED97B /* ptrbuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270EAC32221A48AA00CED97B /* ptrbuffer.cpp */; };
-		270EAC39221A48AB00CED97B /* ALogBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270EAC33221A48AA00CED97B /* ALogBase.cpp */; };
 		2711DEAB21CE349300C96E2F /* NavigatorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711DEAA21CE349300C96E2F /* NavigatorMap.swift */; };
 		2714BB2A21EC344A0082159F /* MYLStackPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714BB2921EC344A0082159F /* MYLStackPageView.swift */; };
 		2714BB4421EC856D0082159F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2714BB3D21EC856C0082159F /* 1.jpg */; };
@@ -86,6 +80,7 @@
 		2797B0B221AFE5C600D47643 /* WGDesingerTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797B0B121AFE5C600D47643 /* WGDesingerTagCell.swift */; };
 		27AC4B6521F83A7700437EEB /* WGSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC4B6421F83A7700437EEB /* WGSearchTextField.swift */; };
 		27AC4B6821F8706D00437EEB /* WGMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC4B6721F8706D00437EEB /* WGMineHeaderView.swift */; };
+		27C18B33231447660022F89B /* WGwwwwwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C18B32231447660022F89B /* WGwwwwwViewController.swift */; };
 		EE919EE4C2188EF944E89122 /* Pods_WantToGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180CD2991513CE0E96F9242E /* Pods_WantToGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,17 +116,6 @@
 		270EAC202213F87700CED97B /* WGDesignerTagListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesignerTagListController.swift; sourceTree = "<group>"; };
 		270EAC22221400A800CED97B /* WGDesignerTagListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesignerTagListModel.swift; sourceTree = "<group>"; };
 		270EAC242214041800CED97B /* WGDesignerTagListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesignerTagListCell.swift; sourceTree = "<group>"; };
-		270EAC29221A48AA00CED97B /* ALogFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALogFileSystem.h; sourceTree = "<group>"; };
-		270EAC2A221A48AA00CED97B /* ALogFileSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALogFileSystem.cpp; sourceTree = "<group>"; };
-		270EAC2B221A48AA00CED97B /* log_buffer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log_buffer.cc; sourceTree = "<group>"; };
-		270EAC2C221A48AA00CED97B /* ALogBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALogBase.h; sourceTree = "<group>"; };
-		270EAC2D221A48AA00CED97B /* ptrbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptrbuffer.h; sourceTree = "<group>"; };
-		270EAC2E221A48AA00CED97B /* formater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = formater.cpp; sourceTree = "<group>"; };
-		270EAC2F221A48AA00CED97B /* log_buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log_buffer.h; sourceTree = "<group>"; };
-		270EAC30221A48AA00CED97B /* autobuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = autobuffer.cpp; sourceTree = "<group>"; };
-		270EAC31221A48AA00CED97B /* autobuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autobuffer.h; sourceTree = "<group>"; };
-		270EAC32221A48AA00CED97B /* ptrbuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ptrbuffer.cpp; sourceTree = "<group>"; };
-		270EAC33221A48AA00CED97B /* ALogBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALogBase.cpp; sourceTree = "<group>"; };
 		2711DEAA21CE349300C96E2F /* NavigatorMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorMap.swift; sourceTree = "<group>"; };
 		2714BB2921EC344A0082159F /* MYLStackPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYLStackPageView.swift; sourceTree = "<group>"; };
 		2714BB3D21EC856C0082159F /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -199,6 +183,7 @@
 		2797B0B121AFE5C600D47643 /* WGDesingerTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGDesingerTagCell.swift; sourceTree = "<group>"; };
 		27AC4B6421F83A7700437EEB /* WGSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGSearchTextField.swift; sourceTree = "<group>"; };
 		27AC4B6721F8706D00437EEB /* WGMineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGMineHeaderView.swift; sourceTree = "<group>"; };
+		27C18B32231447660022F89B /* WGwwwwwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGwwwwwViewController.swift; sourceTree = "<group>"; };
 		45F6EC93358A37B138BE3108 /* Pods-WantToGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.release.xcconfig"; sourceTree = "<group>"; };
 		9DE31279E3B54345098F3A81 /* Pods-WantToGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantToGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,24 +244,6 @@
 				279438F621A650A20066E7F5 /* Info.plist */,
 			);
 			path = Delegate;
-			sourceTree = "<group>";
-		};
-		270EAC28221A48AA00CED97B /* alog */ = {
-			isa = PBXGroup;
-			children = (
-				270EAC29221A48AA00CED97B /* ALogFileSystem.h */,
-				270EAC2A221A48AA00CED97B /* ALogFileSystem.cpp */,
-				270EAC2C221A48AA00CED97B /* ALogBase.h */,
-				270EAC33221A48AA00CED97B /* ALogBase.cpp */,
-				270EAC2D221A48AA00CED97B /* ptrbuffer.h */,
-				270EAC32221A48AA00CED97B /* ptrbuffer.cpp */,
-				270EAC2F221A48AA00CED97B /* log_buffer.h */,
-				270EAC2B221A48AA00CED97B /* log_buffer.cc */,
-				270EAC31221A48AA00CED97B /* autobuffer.h */,
-				270EAC30221A48AA00CED97B /* autobuffer.cpp */,
-				270EAC2E221A48AA00CED97B /* formater.cpp */,
-			);
-			path = alog;
 			sourceTree = "<group>";
 		};
 		2710372D21E5D5F400E35525 /* pic */ = {
@@ -372,7 +339,6 @@
 		279438E921A6509E0066E7F5 /* WantToGo */ = {
 			isa = PBXGroup;
 			children = (
-				270EAC28221A48AA00CED97B /* alog */,
 				270EAC26221A480000CED97B /* Logic */,
 				2794391921A6535B0066E7F5 /* Library */,
 				2794391821A6533E0066E7F5 /* Source */,
@@ -561,6 +527,7 @@
 				2797B08821AD1DC800D47643 /* WGGuangViewController.swift */,
 				270EAC1021FAF27D00CED97B /* WGCommodityDetailController.swift */,
 				270EAC1222116E9800CED97B /* WGGuangCategoryController.swift */,
+				27C18B32231447660022F89B /* WGwwwwwViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -800,40 +767,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MYLCommonUI/MYLCommonUI.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
-				"${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-WantToGo/Pods-WantToGo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MYLCommonUI.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URLNavigator.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-WantToGo/Pods-WantToGo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WantToGo/Pods-WantToGo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WantToGo/Pods-WantToGo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EF334DA79F937C77FB8DDC89 /* [CP] Check Pods Manifest.lock */ = {
@@ -867,10 +809,9 @@
 			files = (
 				2714BB5221EDDEDB0082159F /* WGNavigatorScheme.swift in Sources */,
 				2794392B21A802170066E7F5 /* NetworkManager.swift in Sources */,
+				27C18B33231447660022F89B /* WGwwwwwViewController.swift in Sources */,
 				2797B08121ACEB6D00D47643 /* WGConstants.swift in Sources */,
 				2797B0A021AD534F00D47643 /* UIView+Create.swift in Sources */,
-				270EAC39221A48AB00CED97B /* ALogBase.cpp in Sources */,
-				270EAC37221A48AB00CED97B /* autobuffer.cpp in Sources */,
 				270EAC1522117DA200CED97B /* WGGuangCategoryListModel.swift in Sources */,
 				2797B0AA21AF844900D47643 /* WGDesignerTagsModel.swift in Sources */,
 				2794393921A958E60066E7F5 /* WGModel.swift in Sources */,
@@ -896,7 +837,6 @@
 				2794392121A657D80066E7F5 /* MYLCardPageView.swift in Sources */,
 				270EAC212213F87700CED97B /* WGDesignerTagListController.swift in Sources */,
 				2794393D21AAA4660066E7F5 /* MainTabBarController.swift in Sources */,
-				270EAC36221A48AB00CED97B /* formater.cpp in Sources */,
 				2794393B21AA91C50066E7F5 /* WGWebViewController.swift in Sources */,
 				2717677221B7689100744DCD /* UIImage+Color.swift in Sources */,
 				2797B0AC21AF8FD900D47643 /* WGTableViewController.swift in Sources */,
@@ -904,13 +844,11 @@
 				2797B0A421AE461300D47643 /* WGGuangShopingModel.swift in Sources */,
 				27AC4B6821F8706D00437EEB /* WGMineHeaderView.swift in Sources */,
 				270EAC23221400A800CED97B /* WGDesignerTagListModel.swift in Sources */,
-				270EAC38221A48AB00CED97B /* ptrbuffer.cpp in Sources */,
 				2794394121AAAA8A0066E7F5 /* UIColor+Extention.swift in Sources */,
 				2794393F21AAA74D0066E7F5 /* WGNavigationController.swift in Sources */,
 				2797B09C21AD4CA700D47643 /* WGGuangCategoryModel.swift in Sources */,
 				270EAC1B2212A48E00CED97B /* WGTaDetailCell.swift in Sources */,
 				270EAC1D2212C25D00CED97B /* WGTaDetailModel.swift in Sources */,
-				270EAC35221A48AB00CED97B /* log_buffer.cc in Sources */,
 				270EAC252214041800CED97B /* WGDesignerTagListCell.swift in Sources */,
 				2794392D21A802620066E7F5 /* NetworkConfig.swift in Sources */,
 				2780F4C221DF5BE000B442A7 /* UIView+Frame.swift in Sources */,
@@ -929,7 +867,6 @@
 				2797B08B21AD1DD200D47643 /* WGTaViewController.swift in Sources */,
 				2717677021B4C2DD00744DCD /* WGTaDiscoverCell.swift in Sources */,
 				2714BB2A21EC344A0082159F /* MYLStackPageView.swift in Sources */,
-				270EAC34221A48AB00CED97B /* ALogFileSystem.cpp in Sources */,
 				2714BB4C21EDC5D90082159F /* WGThemeSelectImageView.swift in Sources */,
 				2714BB4E21EDCA290082159F /* WGThemeSelectImageAnimationView.swift in Sources */,
 			);

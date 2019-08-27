@@ -45,7 +45,7 @@ enum NetworkAPI {
 
 extension NetworkAPI : TargetType {
     var baseURL: URL {
-        return URL.init(string: "https://api.xiangqu.com/")!
+        return URL.init(string: "http://api.xiangqu.com/")!
     }
     
     var method: Moya.Method {
